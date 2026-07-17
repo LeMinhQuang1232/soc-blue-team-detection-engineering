@@ -1,0 +1,13 @@
+*.zip
+*.tar
+*.tar.gz
+*.key
+*.pem
+*.pfx
+*.p12
+.env
+*password*
+*credential*
+*secret*
+Thumbs.db
+.DS_Store
