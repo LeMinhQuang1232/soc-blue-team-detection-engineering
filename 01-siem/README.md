@@ -4,12 +4,22 @@ This folder contains projects related to SIEM deployment, log onboarding, alert 
 
 ## Projects
 
-### [Wazuh Windows and Linux Log Onboarding](wazuh-log-onboarding/README.md)
+1. [Wazuh Log Onboarding](./wazuh-log-onboarding/)
+   - Windows and Ubuntu agent deployment
+   - Windows Security and Sysmon telemetry
+   - Linux authentication and Nginx log collection
 
-A local Wazuh lab that collects and validates:
+2. [Wazuh Detection Engineering](./wazuh-detection-engineering/)
+   - Custom Wazuh rules
+   - Authentication attack detections
+   - Suspicious PowerShell detection
+   - Web attack pattern detection
+   - MITRE ATT&CK mapping
+   - Incident investigation reports
 
-- Windows Security Event IDs 4624 and 4625.
-- Sysmon Event IDs.
-- Ubuntu failed and successful SSH logins.
-- Nginx access logs.
-- A safe SQL injection pattern alert.
+## Learning Flow
+
+1. Collect logs.
+2. Build detections.
+3. Validate alerts.
+4. Investigate incidents.

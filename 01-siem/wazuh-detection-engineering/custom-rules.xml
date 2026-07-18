@@ -1,0 +1,57 @@
+<group name="week2_detection_engineering,">
+
+  <!-- Detection 1: SSH brute force -->
+  <rule id="100100" level="12">
+    <if_sid>5712</if_sid>
+    <description>LAB: SSH brute-force activity detected from $(srcip)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>lab_week2,ssh_bruteforce,authentication_attack,</group>
+  </rule>
+
+  <!-- Detection 2: Multiple Windows failed logons -->
+  <rule id="100110" level="12">
+    <if_sid>60204</if_sid>
+    <description>LAB: Multiple Windows logon failures for $(win.eventdata.targetUserName) from $(win.eventdata.ipAddress)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>lab_week2,windows_failed_logons,authentication_attack,</group>
+  </rule>
+
+  <!-- Detection 3: Suspicious PowerShell -->
+  <rule id="100120" level="10">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\powershell.exe$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)-(enc(?:odedcommand)?|frombase64string|downloadstring|invoke-expression|\biex\b)</field>
+    <description>LAB: Suspicious PowerShell command line detected on $(win.system.computer)</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+    <group>lab_week2,suspicious_powershell,execution,</group>
+  </rule>
+
+  <!-- Detection 4: SQL injection pattern -->
+  <rule id="100130" level="10">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(union(?:%20|\+)+select|%27(?:%20|\+)*or(?:%20|\+)+1(?:%3d|=)1|information_schema|sleep%28)</url>
+    <description>LAB: Possible SQL injection pattern in web request from $(srcip)</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>lab_week2,web_attack,sqli_attempt,</group>
+  </rule>
+
+  <!-- Detection 5: XSS or path traversal pattern -->
+  <rule id="100131" level="10">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(%3cscript|javascript%3a|onerror%3d|%2e%2e%2f|/etc/passwd)</url>
+    <description>LAB: Possible XSS or path traversal pattern in web request from $(srcip)</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>lab_week2,web_attack,xss_or_traversal,</group>
+  </rule>
+
+</group>

@@ -1,0 +1,24 @@
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Temporary and backup files
+*.bak
+*.swp
+*.tmp
+*~
+
+# Archives and virtual-machine artifacts
+*.zip
+*.tar
+*.tar.gz
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+
+# Keys and certificates
+*.key
+*.pem
+*.pfx
+*.p12
