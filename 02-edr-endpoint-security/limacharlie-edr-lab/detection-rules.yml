@@ -1,0 +1,111 @@
+# LimaCharlie Detection and Response Rules
+# Authorized lab use. Tune conditions and exclusions before production use.
+
+---
+# Rule 1: Suspicious encoded PowerShell
+name: suspicious-powershell-encoded
+
+detect:
+  event: NEW_PROCESS
+  op: and
+  rules:
+    - op: or
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\powershell.exe"
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\pwsh.exe"
+    - op: or
+      rules:
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "-EncodedCommand"
+          case sensitive: false
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "-enc "
+          case sensitive: false
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "FromBase64String"
+          case sensitive: false
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "DownloadString"
+          case sensitive: false
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "IEX"
+          case sensitive: false
+
+respond:
+  - action: report
+    name: suspicious-powershell-encoded
+    priority: 3
+    metadata:
+      technique: T1059.001
+      description: PowerShell executed with encoded or commonly obfuscated command-line indicators.
+
+---
+# Rule 2: Windows reconnaissance commands
+name: windows-reconnaissance-commands
+
+detect:
+  event: NEW_PROCESS
+  op: or
+  rules:
+    - op: and
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\whoami.exe"
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "/priv"
+          case sensitive: false
+    - op: and
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\net.exe"
+        - op: contains
+          path: event/COMMAND_LINE
+          value: " user"
+          case sensitive: false
+    - op: and
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\net.exe"
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "localgroup administrators"
+          case sensitive: false
+    - op: and
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\ipconfig.exe"
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "/all"
+          case sensitive: false
+    - op: and
+      rules:
+        - op: ends with
+          path: event/FILE_PATH
+          value: "\\nltest.exe"
+        - op: contains
+          path: event/COMMAND_LINE
+          value: "/domain_trusts"
+          case sensitive: false
+
+respond:
+  - action: report
+    name: windows-reconnaissance-commands
+    priority: 3
+    metadata:
+      technique: T1087.001,T1069.001,T1016,T1033
+      description: Windows native commands enumerated accounts, privileges, groups, or network configuration.

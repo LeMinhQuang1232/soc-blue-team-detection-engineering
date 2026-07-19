@@ -1,0 +1,20 @@
+# Archives and VM files
+*.zip
+*.7z
+*.rar
+*.vdi
+*.vmdk
+*.ova
+
+# Secrets and certificates
+*.pem
+*.key
+*.pfx
+*.p12
+.env
+
+# Temporary files
+*.bak
+*.tmp
+Thumbs.db
+.DS_Store
