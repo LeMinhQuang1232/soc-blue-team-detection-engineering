@@ -12,8 +12,7 @@ The environment uses Windows Server, Ubuntu, Sysmon, Wazuh, Nginx, and LimaCharl
 |---|---|---|---|
 | 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | Completed | Windows, Sysmon, Linux, and Nginx log collection |
 | 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Completed | Custom detections, alert validation, and incident reports |
-| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Completed with documented evidence gaps | Endpoint telemetry, D&R rules, EDR/SIEM correlation, and isolation testing |
-| Future | Splunk SIEM Investigation | Planned | SPL searches, dashboards, and investigation workflow |
+| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Completed | Endpoint telemetry, D&R rules, EDR/SIEM correlation, and isolation testing |
 
 ## Repository Structure
 
