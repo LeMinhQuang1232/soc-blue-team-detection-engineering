@@ -6,7 +6,7 @@ This category contains endpoint-focused projects covering telemetry collection, 
 
 | Project | Description | Status |
 |---|---|---|
-| [LimaCharlie EDR Detection and Response Lab](limacharlie-edr-lab/) | Sensor deployment, PowerShell and reconnaissance detection, Sysmon/Wazuh correlation, and network isolation testing | Completed with documented evidence gaps |
+| [LimaCharlie EDR Detection and Response Lab](limacharlie-edr-lab/) | Sensor deployment, PowerShell and reconnaissance detection, Sysmon/Wazuh correlation, and network isolation testing | Completed |
 
 ## Techniques Covered
 
