@@ -12,6 +12,6 @@ The lab imported and used the **Node Exporter Full** dashboard to visualize:
 
 A controlled `stress-ng` test produced visible CPU activity. The repository describes this as an imported dashboard configured for the lab; it does not claim every panel was authored from scratch.
 
-![Network panels](../../08-dashboards-screenshots/grafana/08-grafana-network-dashboard.png)
+[![Network panels](../screenshots/grafana/08-grafana-network-dashboard.png)](../screenshots/grafana/08-grafana-network-dashboard.png)
 
-![Disk I/O panels](../../08-dashboards-screenshots/grafana/09-grafana-disk-io-dashboard.png)
+[![Disk I/O panels](../screenshots/grafana/09-grafana-disk-io-dashboard.png)](../screenshots/grafana/09-grafana-disk-io-dashboard.png)

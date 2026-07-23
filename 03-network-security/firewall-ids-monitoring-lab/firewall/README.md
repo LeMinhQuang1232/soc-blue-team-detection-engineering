@@ -39,8 +39,8 @@ A single Windows VM was used as the USER client and later connected to SOC_ADMIN
 | USER to Prometheus TCP/9090 | Block | Passed |
 | Denied traffic logged | Log | Passed |
 
-![Final USER rules](../../08-dashboards-screenshots/pfsense/26-user-firewall-rules-final.png)
+[![Final USER rules](../screenshots/pfsense/26-user-firewall-rules-final.png)](../screenshots/pfsense/26-user-firewall-rules-final.png)
 
-![Blocked admin ports](../../08-dashboards-screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)
+[![Blocked admin ports](../screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)](../screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)
 
 See [the validation record](validation-tests.md), [firewall rules](pfsense-rules.md), and [troubleshooting analysis](troubleshooting.md).

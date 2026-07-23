@@ -2,17 +2,18 @@
 
 ## Overview
 
-This repository contains hands-on SOC and Blue Team projects focused on log collection, detection engineering, endpoint investigation, alert validation, and incident reporting.
+This repository documents a hands-on SOC Blue Team learning environment built to practice log onboarding, detection engineering, endpoint investigation, network segmentation, intrusion detection, infrastructure monitoring, and SOC-style reporting.
 
-The environment uses Windows Server, Ubuntu, Sysmon, Wazuh, Nginx, and LimaCharlie. All test activity was performed in an isolated and authorized lab with harmless commands.
+The portfolio is organized by **security function**, while each project remains self-contained. A reviewer can open one project folder and find its report, validation results, evidence, rules or configuration, troubleshooting notes, and screenshots without searching across unrelated directories.
 
 ## Project Progress
 
-| Sequence | Project | Status | Main Skills |
-|---|---|---|---|
-| 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | Completed | Windows, Sysmon, Linux, and Nginx log collection |
-| 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Completed | Custom detections, alert validation, and incident reports |
-| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Completed | Endpoint telemetry, D&R rules, EDR/SIEM correlation, and isolation testing |
+| # | Project | Area | Status | Main Evidence |
+|---:|---|---|---|---|
+| 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | SIEM / telemetry collection | Completed | [Screenshots](01-siem/wazuh-log-onboarding/screenshots/) |
+| 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Detection rules / alert analysis | Completed | [Detections](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/) |
+| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Endpoint telemetry / response | Completed with documented evidence limitations | [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/) |
+| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed with documented lab limitations | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week5-evidence-index.md) |
 
 ## Repository Structure
 
@@ -23,64 +24,92 @@ soc-blue-team-detection-engineering/
 │   ├── README.md
 │   ├── wazuh-log-onboarding/
 │   └── wazuh-detection-engineering/
-└── 02-edr-endpoint-security/
+├── 02-edr-endpoint-security/
+│   ├── README.md
+│   └── limacharlie-edr-lab/
+└── 03-network-security/
     ├── README.md
-    └── limacharlie-edr-lab/
+    └── firewall-ids-monitoring-lab/
+        ├── README.md
+        ├── report.md
+        ├── validation-summary.md
+        ├── firewall/
+        ├── ids/
+        ├── monitoring/
+        ├── incident-reports/
+        ├── scripts/
+        └── screenshots/
 ```
 
 ## Skills Demonstrated
 
-- SIEM log onboarding and validation
-- Windows Event Log and Sysmon analysis
-- Wazuh detection engineering and threat hunting
-- LimaCharlie sensor deployment and endpoint telemetry
-- Detection and Response rule development
-- Suspicious PowerShell and reconnaissance detection
-- EDR and SIEM event correlation
-- MITRE ATT&CK mapping
-- Endpoint network isolation testing
-- Evidence-based SOC reporting
+| Skill area | Practical evidence in this repository |
+|---|---|
+| SIEM deployment and log onboarding | Wazuh manager/dashboard, Windows agent, Sysmon, Linux authentication logs, and Nginx access logs |
+| Windows and Linux telemetry analysis | Windows Security events, Sysmon process/file/network events, SSH logs, and web-server logs |
+| Detection engineering | Wazuh custom rules, threshold and correlation logic, safe test generation, rule validation, and false-positive notes |
+| Alert triage and incident reporting | Evidence tables, analyst conclusions, timelines, impact, containment, remediation, and lessons learned |
+| Endpoint detection and response | LimaCharlie sensor deployment, process context, reconnaissance detections, SIEM correlation, and network isolation testing |
+| Firewall policy and segmentation | pfSense zones, aliases, least-privilege allow/deny rules, logging, and role-based administration |
+| Network intrusion detection | Suricata configuration, `fast.log`, `eve.json`, and custom SQLi/XSS/SYN signatures |
+| Monitoring and observability | Prometheus, node_exporter, Grafana, PromQL, host metrics, and controlled load validation |
+| Troubleshooting methodology | Packet capture, service status, firewall-layer isolation, DNS/egress recovery, interface correction, and config validation |
+| MITRE ATT&CK mapping | T1110, T1059.001, T1046, T1021, T1190, and related behavior-based analysis |
+| Scripting and reproducibility | PowerShell and Bash traffic generators, XML/YAML rules, Docker Compose, and reusable configuration files |
 
-## Current EDR Project
+## Project 1 — Wazuh Log Onboarding
 
-The [LimaCharlie EDR Detection and Response Lab](02-edr-endpoint-security/limacharlie-edr-lab/) includes:
+The first project established the telemetry foundation. A local Wazuh environment collected Windows authentication events, Sysmon endpoint telemetry, Ubuntu SSH events, and Nginx web requests generated through controlled tests.
 
-- Windows sensor deployment and service validation;
-- safe encoded PowerShell telemetry;
-- four validated Windows reconnaissance detections;
-- Sysmon and Wazuh correlation;
-- endpoint isolation testing;
-- validation results that clearly distinguish `Passed`, `Partial`, and `Pending Evidence`.
+**Project links:** [Project README](01-siem/wazuh-log-onboarding/) · [Technical report](01-siem/wazuh-log-onboarding/report.md) · [Evidence log](01-siem/wazuh-log-onboarding/evidence-log.md) · [Validation tests](01-siem/wazuh-log-onboarding/validation-tests.md) · [Screenshots](01-siem/wazuh-log-onboarding/screenshots/)
 
-## Safety Notice
+## Project 2 — Wazuh Detection Engineering
 
-No malware, credential theft, persistence, or destructive payload was used. The encoded PowerShell command only printed a test string.
+The second project converted collected telemetry into detection use cases for SSH brute force, repeated Windows failed logons, successful authentication after failures, suspicious PowerShell, and web attack patterns. The work includes custom Wazuh rules, `wazuh-logtest` validation, detection documentation, and SOC-style incident reports.
 
+**Project links:** [Project README](01-siem/wazuh-detection-engineering/) · [Technical report](01-siem/wazuh-detection-engineering/report.md) · [Custom rules](01-siem/wazuh-detection-engineering/custom-rules.xml) · [Detection use cases](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/)
 
+## Project 3 — LimaCharlie EDR Detection and Response
 
-<!-- WEEK5-NETWORK-SECURITY-START -->
-## Project 4 — Firewall, IDS, and Metrics Monitoring
+The endpoint-security project deployed a LimaCharlie sensor, investigated process and parent-process context, detected Windows reconnaissance commands, correlated EDR telemetry with Sysmon and Wazuh, and tested the operational effect of network isolation. Unsupported evidence is clearly marked rather than presented as complete.
 
-Week 5 adds a three-zone network-security lab built with pfSense, Suricata, Prometheus, Grafana, Nginx, and a Windows test client. The lab validates least-privilege firewall policy, blocked administrative access from a user zone, authorized SOC administration, signature-based network detection, host-metrics collection, controlled load testing, and evidence-based incident reporting.
+**Project links:** [Project README](02-edr-endpoint-security/limacharlie-edr-lab/) · [Technical report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Detection rules](02-edr-endpoint-security/limacharlie-edr-lab/detection-rules.yml) · [Detection notes](02-edr-endpoint-security/limacharlie-edr-lab/detections/) · [Incident reports](02-edr-endpoint-security/limacharlie-edr-lab/incident-reports/) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/)
 
-| Area | Project | Status |
-|---|---|---|
-| Firewall and segmentation | [pfSense Segmentation Lab](03-firewall-network-security/pfsense-segmentation-lab/) | Completed |
-| IDS / NSM | [Suricata IDS Lab](04-ids-ips-nsm/suricata-ids-lab/) | Completed |
-| Detection-as-code | [Suricata Custom Rules](04-ids-ips-nsm/suricata-custom-rules/) | Completed |
-| Monitoring | [Prometheus and Grafana Lab](05-monitoring-observability/prometheus-grafana-lab/) | Completed |
-| Incident response | [Week 5 Incident Reports](07-incident-response/) | Completed |
-| Full weekly report | [Week 5 Report](weekly-reports/week5-firewall-ids-monitoring-report.md) | Completed |
+## Project 4 — Firewall, IDS, and Infrastructure Monitoring
 
-### Week 5 Highlights
+The network-security project built three pfSense zones, enforced least-privilege access to a DMZ, detected controlled web-attack and scan traffic with Suricata, and monitored the Ubuntu server with Prometheus and Grafana. It also records real troubleshooting involving UFW, DNS/package access, Suricata interface naming, Docker networking, and timestamp normalization.
 
-- Segmented `USER_NET`, `DMZ_NET`, and `SOC_ADMIN` with pfSense.
-- Allowed USER access to DMZ web services while denying SSH, SMB, RDP, Grafana, and Prometheus.
-- Allowed controlled SOC_ADMIN access to DMZ SSH and monitoring services.
-- Created Suricata rules for SQL injection, XSS, and TCP SYN scan behavior.
-- Validated Suricata alerts through `fast.log` and `eve.json`.
-- Collected Linux metrics with node_exporter and Prometheus.
-- Visualized CPU, memory, disk, and network activity in Grafana.
-- Documented troubleshooting for UFW, DNS/package installation, Suricata interface selection, Docker networking, and timestamp alignment.
-<!-- WEEK5-NETWORK-SECURITY-END -->
+**Project links:** [Project README](03-network-security/firewall-ids-monitoring-lab/) · [Full report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Firewall](03-network-security/firewall-ids-monitoring-lab/firewall/) · [Suricata IDS](03-network-security/firewall-ids-monitoring-lab/ids/suricata/) · [Custom rules](03-network-security/firewall-ids-monitoring-lab/ids/custom-rules/) · [Monitoring](03-network-security/firewall-ids-monitoring-lab/monitoring/) · [Incident reports](03-network-security/firewall-ids-monitoring-lab/incident-reports/) · [Screenshots](03-network-security/firewall-ids-monitoring-lab/screenshots/)
 
+## Portfolio Highlights
+
+- Built an evidence-backed SOC portfolio spanning SIEM, EDR, firewall segmentation, IDS, metrics monitoring, and incident reporting.
+- Collected and investigated Windows, Sysmon, Linux authentication, Nginx, EDR, firewall, IDS, and host-metrics data.
+- Wrote and validated custom detection logic for brute force, suspicious PowerShell, SQL injection, XSS, reconnaissance, and scan behavior.
+- Applied least-privilege network policy by allowing required application traffic and denying unauthorized administrative access.
+- Correlated security events across endpoint telemetry, SIEM alerts, firewall enforcement, IDS signatures, and system metrics.
+- Documented failures and recovery steps instead of presenting only successful screenshots.
+
+## Integrated Lab Narrative
+
+Across the completed projects, the portfolio follows a practical defensive workflow:
+
+1. **Collect telemetry** from endpoints, operating systems, authentication services, and web applications.
+2. **Create detections** and validate them with safe, repeatable test activity.
+3. **Investigate endpoint context** using EDR process telemetry and SIEM correlation.
+4. **Restrict network access** with segmentation and role-based firewall policy.
+5. **Detect suspicious network behavior** using IDS signatures and structured event data.
+6. **Add operational context** through infrastructure metrics and dashboards.
+7. **Document findings** with evidence, limitations, containment, remediation, and lessons learned.
+
+## Current Limitations and Next Focus
+
+- The Splunk SIEM investigation phase is not represented as a completed GitHub project yet.
+- Suricata has been validated in IDS mode, not inline IPS mode.
+- Firewall and IDS logs are not yet centrally forwarded into Wazuh or Splunk.
+- Some LimaCharlie response-recovery and monitoring-alert delivery evidence remains partial and is documented inside the relevant reports.
+- The next portfolio improvement is a complete Splunk ingestion, SPL investigation, and dashboard project using the existing Windows, Sysmon, Linux, Nginx, firewall, and Suricata data sources.
+
+## Evidence Policy
+
+Every screenshot is stored inside its project. Markdown image embeds are wrapped in links, so selecting an image opens the corresponding screenshot file. Results without sufficient evidence are marked as partial, configured-only, or not implemented.

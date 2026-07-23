@@ -1,4 +1,4 @@
-# LimaCharlie EDR Detection and Response Lab
+﻿# LimaCharlie EDR Detection and Response Lab
 
 ## Overview
 
@@ -14,7 +14,7 @@ The project is presented as the third completed portfolio phase so it follows th
 | Sensor service running automatically | Passed |
 | Encoded PowerShell telemetry | Passed |
 | LimaCharlie encoded-PowerShell alert | Pending Evidence |
-| Windows reconnaissance detection | Passed — four detections |
+| Windows reconnaissance detection | Passed â€” four detections |
 | Sysmon process correlation | Passed |
 | Wazuh encoded PowerShell correlation | Passed |
 | Network isolation effect | Passed |
@@ -38,20 +38,21 @@ The project is presented as the third completed portfolio phase so it follows th
 
 ### Sensor Deployment
 
-![LimaCharlie sensor online](screenshots/01-setup/01-sensor-online.png)
+[![LimaCharlie sensor online](screenshots/01-setup/01-sensor-online.png)](screenshots/01-setup/01-sensor-online.png)
 
 ### Reconnaissance Detection
 
-![Reconnaissance detections](screenshots/03-reconnaissance/03-detections-overview.png)
+[![Reconnaissance detections](screenshots/03-reconnaissance/03-detections-overview.png)](screenshots/03-reconnaissance/03-detections-overview.png)
 
 ### Wazuh Correlation
 
-![Wazuh encoded PowerShell alert](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)
+[![Wazuh encoded PowerShell alert](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)
 
 ### Network Isolation
 
-![Connectivity blocked after isolation](screenshots/04-containment/03-connectivity-blocked.png)
+[![Connectivity blocked after isolation](screenshots/04-containment/03-connectivity-blocked.png)](screenshots/04-containment/03-connectivity-blocked.png)
 
 ## Safety Notice
 
 All activity was generated on authorized systems in an isolated personal lab. The encoded PowerShell test only executed `Write-Output`; the discovery commands were standard Windows utilities.
+

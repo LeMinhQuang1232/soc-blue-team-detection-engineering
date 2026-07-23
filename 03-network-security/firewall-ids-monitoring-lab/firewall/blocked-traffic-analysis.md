@@ -16,6 +16,6 @@ The combination of a failed client connection and a matching firewall deny log i
 
 This was expected policy enforcement, not a security incident. In a real SOC, repeated access attempts to multiple administrative ports would still justify triage for reconnaissance or lateral-movement behavior.
 
-![USER SSH blocked](../../08-dashboards-screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)
+[![USER SSH blocked](../screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)](../screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)
 
-![Firewall deny logs](../../08-dashboards-screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)
+[![Firewall deny logs](../screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)](../screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)

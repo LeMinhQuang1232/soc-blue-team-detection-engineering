@@ -8,7 +8,7 @@
 | `WEB_PORTS` | Port | `80,443` |
 | `ADMIN_PORTS` | Port | `22,445,3389` |
 
-![Aliases](../../08-dashboards-screenshots/pfsense/08-service-port-aliases.png)
+[![Aliases](../screenshots/pfsense/08-service-port-aliases.png)](../screenshots/pfsense/08-service-port-aliases.png)
 
 ## USER interface order
 

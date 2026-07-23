@@ -14,8 +14,8 @@ Deploy Suricata on the Ubuntu DMZ server, correct its capture-interface configur
 - EVE JSON investigation: completed.
 - Inline IPS: not implemented.
 
-![Suricata alerts](../../08-dashboards-screenshots/suricata/09-suricata-fast-log-alerts.png)
+[![Suricata alerts](../../screenshots/suricata/09-suricata-fast-log-alerts.png)](../../screenshots/suricata/09-suricata-fast-log-alerts.png)
 
-![EVE JSON analysis](../../08-dashboards-screenshots/suricata/10-suricata-eve-json-alert-analysis.png)
+[![EVE JSON analysis](../../screenshots/suricata/10-suricata-eve-json-alert-analysis.png)](../../screenshots/suricata/10-suricata-eve-json-alert-analysis.png)
 
 See [setup](setup.md), [alert analysis](eve-json-analysis.md), [validation](validation-tests.md), and [troubleshooting](troubleshooting.md).

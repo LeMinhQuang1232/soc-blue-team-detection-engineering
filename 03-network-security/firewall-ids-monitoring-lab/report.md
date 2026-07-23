@@ -45,7 +45,7 @@ No compromise occurred. All suspicious activity was intentionally generated insi
 
 Because the laptop was limited to approximately three simultaneous VMs, the same Windows VM was used first as the USER role and later as the SOC_ADMIN role.
 
-![Interface assignments](../08-dashboards-screenshots/pfsense/04-pfsense-interface-assignments.png)
+[![Interface assignments](screenshots/pfsense/04-pfsense-interface-assignments.png)](screenshots/pfsense/04-pfsense-interface-assignments.png)
 
 ## 4. Tools and Roles
 
@@ -95,7 +95,7 @@ Because the laptop was limited to approximately three simultaneous VMs, the same
 | USER_NET | DMZ server | Grafana/Prometheus | Block | TCP/3000 and 9090 failed |
 | DMZ | USER_NET | Unsolicited traffic | Block | Policy configured |
 
-![Final USER policy](../08-dashboards-screenshots/pfsense/26-user-firewall-rules-final.png)
+[![Final USER policy](screenshots/pfsense/26-user-firewall-rules-final.png)](screenshots/pfsense/26-user-firewall-rules-final.png)
 
 ### 6.3 Why the result is meaningful
 
@@ -107,23 +107,23 @@ The policy demonstrates least privilege and role separation. USER_NET receives o
 
 `curl.exe` returned the Nginx page, and `Test-NetConnection 192.168.20.10 -Port 80` returned `TcpTestSucceeded: True`.
 
-![HTTP allowed](../08-dashboards-screenshots/pfsense/13-user-to-dmz-http-port80-passed.png)
+[![HTTP allowed](screenshots/pfsense/13-user-to-dmz-http-port80-passed.png)](screenshots/pfsense/13-user-to-dmz-http-port80-passed.png)
 
 ### 7.2 Blocked administrative traffic
 
 USER_NET tests to TCP/22, TCP/445, and TCP/3389 failed. pfSense displayed corresponding denied packets.
 
-![SSH blocked](../08-dashboards-screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)
+[![SSH blocked](screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)](screenshots/pfsense/14-user-to-dmz-ssh-blocked.png)
 
-![Deny logs](../08-dashboards-screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)
+[![Deny logs](screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)](screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png)
 
 ### 7.3 Role-based monitoring access
 
 SOC_ADMIN successfully reached TCP/3000 and TCP/9090, while USER_NET failed on both ports.
 
-![SOC_ADMIN Prometheus allowed](../08-dashboards-screenshots/pfsense/23-socadmin-to-prometheus-passed.png)
+[![SOC_ADMIN Prometheus allowed](screenshots/pfsense/23-socadmin-to-prometheus-passed.png)](screenshots/pfsense/23-socadmin-to-prometheus-passed.png)
 
-![USER Prometheus blocked](../08-dashboards-screenshots/pfsense/25-user-to-prometheus-blocked.png)
+[![USER Prometheus blocked](screenshots/pfsense/25-user-to-prometheus-blocked.png)](screenshots/pfsense/25-user-to-prometheus-blocked.png)
 
 ## 8. FortiGate-Style Policy Mapping
 
@@ -157,7 +157,7 @@ Suricata initially referenced `eth0`, but the Ubuntu DMZ NIC used predictable na
 - Ran `suricata -T` before restarting.
 - Confirmed the service was active.
 
-![Suricata validation](../08-dashboards-screenshots/suricata/06-suricata-config-validation.png)
+[![Suricata validation](screenshots/suricata/06-suricata-config-validation.png)](screenshots/suricata/06-suricata-config-validation.png)
 
 ## 10. Suricata Detection Results
 
@@ -169,15 +169,15 @@ Suricata initially referenced `eth0`, but the Ubuntu DMZ NIC used predictable na
 | `1000002` | Established HTTP URI contains `<script` | Alerted |
 | `1000003` | 15 TCP SYN packets from one source in ten seconds | Alerted |
 
-![Final local rules](../08-dashboards-screenshots/suricata/12-local-rules-final.png)
+[![Final local rules](screenshots/suricata/12-local-rules-final.png)](screenshots/suricata/12-local-rules-final.png)
 
 ### 10.2 Alert evidence
 
 `fast.log` recorded the three LOCAL signatures. `eve.json` exposed structured alert details for analyst review. Nginx access logs independently confirmed the HTTP requests.
 
-![fast.log alerts](../08-dashboards-screenshots/suricata/09-suricata-fast-log-alerts.png)
+[![fast.log alerts](screenshots/suricata/09-suricata-fast-log-alerts.png)](screenshots/suricata/09-suricata-fast-log-alerts.png)
 
-![EVE JSON](../08-dashboards-screenshots/suricata/10-suricata-eve-json-alert-analysis.png)
+[![EVE JSON](screenshots/suricata/10-suricata-eve-json-alert-analysis.png)](screenshots/suricata/10-suricata-eve-json-alert-analysis.png)
 
 ### 10.3 Security interpretation
 
@@ -187,9 +187,9 @@ The alerts prove pattern recognition, not exploit success. No database or vulner
 
 The stack ran as three Docker Compose services. `promtool` validated both configuration and rules. node_exporter exposed host metrics, and Prometheus showed the `prometheus` and `ubuntu-node` targets as UP.
 
-![Compose services](../08-dashboards-screenshots/prometheus/01-docker-compose-services-up.png)
+[![Compose services](screenshots/prometheus/01-docker-compose-services-up.png)](screenshots/prometheus/01-docker-compose-services-up.png)
 
-![Targets UP](../08-dashboards-screenshots/prometheus/07-prometheus-targets-up.png)
+[![Targets UP](screenshots/prometheus/07-prometheus-targets-up.png)](screenshots/prometheus/07-prometheus-targets-up.png)
 
 Grafana used `http://prometheus:9090` because containers communicate through the Compose service name. The data source query succeeded.
 
@@ -205,9 +205,9 @@ Prometheus returned data for:
 
 A bounded `stress-ng` run created visible CPU utilization. `top` showed the responsible process and Grafana displayed the spike. Other Node Exporter Full panels showed memory, network, disk I/O, filesystem, disk utilization, and pressure information.
 
-![CPU test process](../08-dashboards-screenshots/grafana/04-top-cpu-load-evidence.png)
+[![CPU test process](screenshots/grafana/04-top-cpu-load-evidence.png)](screenshots/grafana/04-top-cpu-load-evidence.png)
 
-![Grafana CPU panels](../08-dashboards-screenshots/grafana/06-grafana-cpu-dashboard.png)
+[![Grafana CPU panels](screenshots/grafana/06-grafana-cpu-dashboard.png)](screenshots/grafana/06-grafana-cpu-dashboard.png)
 
 ### Alert-validation boundary
 

@@ -94,4 +94,4 @@
 
 ## Complete raw set
 
-All 71 original screenshots are preserved under [`week5-raw-evidence/`](week5-raw-evidence/). The curated directories contain descriptive copies used by reports.
+All 71 original screenshots are preserved under [`week5-raw-evidence/`](week5-raw-evidence). The curated directories contain descriptive copies used by reports.

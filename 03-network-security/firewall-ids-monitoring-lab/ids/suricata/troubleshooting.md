@@ -29,9 +29,9 @@ sudo systemctl restart suricata
 sudo systemctl status suricata --no-pager
 ```
 
-![Initial error](../../08-dashboards-screenshots/suricata/02-suricata-initial-interface-error.png)
+[![Initial error](../../screenshots/suricata/02-suricata-initial-interface-error.png)](../../screenshots/suricata/02-suricata-initial-interface-error.png)
 
-![Successful validation](../../08-dashboards-screenshots/suricata/06-suricata-config-validation.png)
+[![Successful validation](../../screenshots/suricata/06-suricata-config-validation.png)](../../screenshots/suricata/06-suricata-config-validation.png)
 
 ## Rule-file warning
 

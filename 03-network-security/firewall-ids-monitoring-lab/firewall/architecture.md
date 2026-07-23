@@ -17,4 +17,4 @@
 - DMZ egress is limited to necessary update and service traffic.
 - Deny rules are logged so an analyst can distinguish policy enforcement from host or application failure.
 
-![Interface assignments](../../08-dashboards-screenshots/pfsense/04-pfsense-interface-assignments.png)
+[![Interface assignments](../screenshots/pfsense/04-pfsense-interface-assignments.png)](../screenshots/pfsense/04-pfsense-interface-assignments.png)

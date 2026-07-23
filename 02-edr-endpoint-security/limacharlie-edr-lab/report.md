@@ -1,4 +1,4 @@
-# Week 3 Report — LimaCharlie EDR Detection and Response
+﻿# Week 3 Report â€” LimaCharlie EDR Detection and Response
 
 ## 1. Executive Summary
 
@@ -41,16 +41,16 @@ Endpoint isolation was also tested. Ping and HTTP access to the Ubuntu/Wazuh ser
                   |              |                  |
                   v              v                  v
         WIN-ENDPOINT / win-endpoint.lan / 192.168.56.20
-        ├── LimaCharlie sensor
-        ├── Sysmon Event ID 1
-        ├── Wazuh agent
-        └── Safe PowerShell and discovery commands
+        â”œâ”€â”€ LimaCharlie sensor
+        â”œâ”€â”€ Sysmon Event ID 1
+        â”œâ”€â”€ Wazuh agent
+        â””â”€â”€ Safe PowerShell and discovery commands
                   |
                   | Sysmon and Windows telemetry
                   v
         SOC-WAZUH / 192.168.56.10
-        ├── Wazuh manager, indexer, and dashboard
-        └── Nginx service used for connectivity testing
+        â”œâ”€â”€ Wazuh manager, indexer, and dashboard
+        â””â”€â”€ Nginx service used for connectivity testing
 ```
 
 ## 5. Sensor Deployment
@@ -64,13 +64,13 @@ The LimaCharlie Sensors page showed `win-endpoint.lan` online. Windows PowerShel
 | Status | `Running` |
 | Startup type | `Automatic` |
 
-![Sensor online](screenshots/01-setup/01-sensor-online.png)
+[![Sensor online](screenshots/01-setup/01-sensor-online.png)](screenshots/01-setup/01-sensor-online.png)
 
-![Sensor service](screenshots/01-setup/02-service-running.png)
+[![Sensor service](screenshots/01-setup/02-service-running.png)](screenshots/01-setup/02-service-running.png)
 
 **Result:** Passed.
 
-## 6. Detection 1 — Suspicious Encoded PowerShell
+## 6. Detection 1 â€” Suspicious Encoded PowerShell
 
 ### 6.1 Safe Test Command
 
@@ -84,7 +84,7 @@ powershell.exe -NoProfile -EncodedCommand $Encoded
 
 The command only printed `Week4-EDR-Test`. The marker was created before the project was moved into the third portfolio sequence and is retained because it appears in the original screenshot.
 
-![Safe encoded PowerShell test](screenshots/02-suspicious-powershell/01-safe-test-command.png)
+[![Safe encoded PowerShell test](screenshots/02-suspicious-powershell/01-safe-test-command.png)](screenshots/02-suspicious-powershell/01-safe-test-command.png)
 
 ### 6.2 Detection Logic
 
@@ -96,7 +96,7 @@ The rule detects `powershell.exe` or `pwsh.exe` when the command line contains i
 - `DownloadString`
 - `IEX`
 
-MITRE ATT&CK: **T1059.001 — PowerShell**.
+MITRE ATT&CK: **T1059.001 â€” PowerShell**.
 
 ### 6.3 LimaCharlie Telemetry
 
@@ -108,7 +108,7 @@ LimaCharlie recorded a `NEW_PROCESS` event containing:
 - full encoded command line;
 - process and parent-process context.
 
-![LimaCharlie PowerShell telemetry](screenshots/02-suspicious-powershell/02-limacharlie-process-telemetry.png)
+[![LimaCharlie PowerShell telemetry](screenshots/02-suspicious-powershell/02-limacharlie-process-telemetry.png)](screenshots/02-suspicious-powershell/02-limacharlie-process-telemetry.png)
 
 ### 6.4 Wazuh and Sysmon Correlation
 
@@ -124,13 +124,13 @@ The event was also visible through Wazuh/Sysmon:
 | Rule level | `12` |
 | MITRE | T1059.001 |
 
-![Wazuh PowerShell hunt](screenshots/02-suspicious-powershell/03-wazuh-powershell-hunt.png)
+[![Wazuh PowerShell hunt](screenshots/02-suspicious-powershell/03-wazuh-powershell-hunt.png)](screenshots/02-suspicious-powershell/03-wazuh-powershell-hunt.png)
 
-![Wazuh encoded alert](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)
+[![Wazuh encoded alert](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)](screenshots/02-suspicious-powershell/04-wazuh-encoded-alert.png)
 
 A normal PowerShell process matched a lower-severity Wazuh rule (`92027`, level 4), providing a useful comparison with the encoded event.
 
-![Benign PowerShell comparison](screenshots/02-suspicious-powershell/05-benign-powershell-comparison.png)
+[![Benign PowerShell comparison](screenshots/02-suspicious-powershell/05-benign-powershell-comparison.png)](screenshots/02-suspicious-powershell/05-benign-powershell-comparison.png)
 
 ### 6.5 Assessment
 
@@ -143,7 +143,7 @@ A normal PowerShell process matched a lower-severity Wazuh rule (`92027`, level 
 
 The current screenshots prove telemetry and SIEM detection, but they do not prove that the LimaCharlie custom rule generated a detection card.
 
-## 7. Detection 2 — Windows Reconnaissance Commands
+## 7. Detection 2 â€” Windows Reconnaissance Commands
 
 ### 7.1 Detection Logic
 
@@ -157,9 +157,9 @@ ipconfig.exe /all
 nltest.exe /domain_trusts
 ```
 
-![Reconnaissance D&R rule](screenshots/03-reconnaissance/01-recon-rule.png)
+[![Reconnaissance D&R rule](screenshots/03-reconnaissance/01-recon-rule.png)](screenshots/03-reconnaissance/01-recon-rule.png)
 
-![Rule unit tests](screenshots/03-reconnaissance/02-rule-unit-tests.png)
+[![Rule unit tests](screenshots/03-reconnaissance/02-rule-unit-tests.png)](screenshots/03-reconnaissance/02-rule-unit-tests.png)
 
 ### 7.2 LimaCharlie Detection Results
 
@@ -172,9 +172,9 @@ Four detections were captured:
 | 14:41:15 | `net.exe localgroup administrators` | Detected |
 | 14:41:24 | `ipconfig.exe /all` | Detected |
 
-![Recon detections](screenshots/03-reconnaissance/03-detections-overview.png)
+[![Recon detections](screenshots/03-reconnaissance/03-detections-overview.png)](screenshots/03-reconnaissance/03-detections-overview.png)
 
-![Recon event context](screenshots/03-reconnaissance/04-detection-event-context.png)
+[![Recon event context](screenshots/03-reconnaissance/04-detection-event-context.png)](screenshots/03-reconnaissance/04-detection-event-context.png)
 
 ### 7.3 Sysmon Validation
 
@@ -189,9 +189,9 @@ Parent: powershell.exe
 MITRE: T1016
 ```
 
-![Sysmon ipconfig process](screenshots/03-reconnaissance/05-sysmon-ipconfig-process.png)
+[![Sysmon ipconfig process](screenshots/03-reconnaissance/05-sysmon-ipconfig-process.png)](screenshots/03-reconnaissance/05-sysmon-ipconfig-process.png)
 
-![Sysmon ipconfig parent](screenshots/03-reconnaissance/06-sysmon-ipconfig-parent.png)
+[![Sysmon ipconfig parent](screenshots/03-reconnaissance/06-sysmon-ipconfig-parent.png)](screenshots/03-reconnaissance/06-sysmon-ipconfig-parent.png)
 
 #### Local group discovery
 
@@ -202,9 +202,9 @@ Parent: powershell.exe
 Analyst mapping: T1069.001
 ```
 
-![Sysmon localgroup process](screenshots/03-reconnaissance/07-sysmon-localgroup-process.png)
+[![Sysmon localgroup process](screenshots/03-reconnaissance/07-sysmon-localgroup-process.png)](screenshots/03-reconnaissance/07-sysmon-localgroup-process.png)
 
-![Sysmon localgroup parent](screenshots/03-reconnaissance/08-sysmon-localgroup-parent.png)
+[![Sysmon localgroup parent](screenshots/03-reconnaissance/08-sysmon-localgroup-parent.png)](screenshots/03-reconnaissance/08-sysmon-localgroup-parent.png)
 
 #### User and privilege discovery
 
@@ -215,9 +215,9 @@ Parent: powershell.exe
 MITRE: T1033
 ```
 
-![Sysmon whoami process](screenshots/03-reconnaissance/09-sysmon-whoami-process.png)
+[![Sysmon whoami process](screenshots/03-reconnaissance/09-sysmon-whoami-process.png)](screenshots/03-reconnaissance/09-sysmon-whoami-process.png)
 
-![Sysmon whoami parent](screenshots/03-reconnaissance/10-sysmon-whoami-parent.png)
+[![Sysmon whoami parent](screenshots/03-reconnaissance/10-sysmon-whoami-parent.png)](screenshots/03-reconnaissance/10-sysmon-whoami-parent.png)
 
 ### 7.4 MITRE ATT&CK Mapping
 
@@ -250,13 +250,13 @@ The visible time difference is caused by UTC in LimaCharlie/Sysmon and UTC+7 in 
 
 Before isolation, the Windows endpoint successfully reached `192.168.56.10` through ICMP and HTTP.
 
-![Connectivity before isolation](screenshots/04-containment/01-connectivity-before.png)
+[![Connectivity before isolation](screenshots/04-containment/01-connectivity-before.png)](screenshots/04-containment/01-connectivity-before.png)
 
 ### 9.2 Isolation Request
 
 The command `segregate_network` was issued through the LimaCharlie console. The screenshot showed `AWAITING` rather than a completed response.
 
-![Isolation awaiting](screenshots/04-containment/02-segregate-network-awaiting.png)
+[![Isolation awaiting](screenshots/04-containment/02-segregate-network-awaiting.png)](screenshots/04-containment/02-segregate-network-awaiting.png)
 
 ### 9.3 Network Effect
 
@@ -265,7 +265,7 @@ After the isolation request:
 - ping returned `General failure`;
 - `curl.exe` could not connect to TCP port 80.
 
-![Connectivity blocked](screenshots/04-containment/03-connectivity-blocked.png)
+[![Connectivity blocked](screenshots/04-containment/03-connectivity-blocked.png)](screenshots/04-containment/03-connectivity-blocked.png)
 
 ### 9.4 Assessment
 
@@ -324,3 +324,4 @@ These gaps do not invalidate the completed evidence. They remain clearly marked 
 ## 14. Conclusion
 
 The project successfully demonstrated sensor deployment, endpoint telemetry analysis, Windows reconnaissance detection, Sysmon and Wazuh correlation, and the network-blocking effect of endpoint isolation. The remaining PowerShell custom-alert and recovery evidence is documented as pending and can be added later without restructuring the project.
+

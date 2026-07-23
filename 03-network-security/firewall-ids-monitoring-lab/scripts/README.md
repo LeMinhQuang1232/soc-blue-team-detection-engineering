@@ -4,6 +4,6 @@
 - [Firewall policy validation script](sample-log-generators/test-firewall-policy.ps1)
 - [Controlled Linux CPU load script](sample-log-generators/generate-cpu-load.sh)
 - [Suricata local rules](suricata-rules/local.rules)
-- [Prometheus/Grafana configuration](monitoring/)
+- [Prometheus/Grafana configuration](monitoring)
 
 All test scripts are intended only for the isolated lab addresses documented in this repository.

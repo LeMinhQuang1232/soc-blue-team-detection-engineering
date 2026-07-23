@@ -23,6 +23,6 @@ Deploy a lightweight monitoring stack on the Ubuntu DMZ server, verify scrape he
 - Alert rules returned to normal after the stress activity ended.
 - No screenshot captured a complete firing-to-recovery alert notification sequence.
 
-![Prometheus targets](../../08-dashboards-screenshots/prometheus/07-prometheus-targets-up.png)
+[![Prometheus targets](../screenshots/prometheus/07-prometheus-targets-up.png)](../screenshots/prometheus/07-prometheus-targets-up.png)
 
-![Grafana CPU dashboard](../../08-dashboards-screenshots/grafana/06-grafana-cpu-dashboard.png)
+[![Grafana CPU dashboard](../screenshots/grafana/06-grafana-cpu-dashboard.png)](../screenshots/grafana/06-grafana-cpu-dashboard.png)
