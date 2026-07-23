@@ -1,0 +1,29 @@
+groups:
+  - name: week5-host-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage has remained above 80% for five minutes."
+
+      - alert: LowDiskSpace
+        expr: 100 * (1 - (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"})) > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High disk utilization on {{ $labels.instance }}"
+          description: "A filesystem has remained above 85% utilization for five minutes."
+
+      - alert: HighNetworkReceiveRate
+        expr: sum by(instance) (rate(node_network_receive_bytes_total{device!="lo"}[5m])) > 10000000
+        for: 5m
+        labels:
+          severity: info
+        annotations:
+          summary: "High receive traffic on {{ $labels.instance }}"
+          description: "Receive traffic exceeded the lab threshold. Correlate with firewall and IDS evidence."

@@ -1,0 +1,72 @@
+﻿original_filename,status,curated_path,description,size_bytes
+Screenshot 2026-07-20 152638.png,Curated,08-dashboards-screenshots/pfsense/01-windows-test-client-system.png,Windows test client system information.,85301
+Screenshot 2026-07-20 152824.png,Curated,08-dashboards-screenshots/pfsense/02-user-net-ip-configuration.png,USER_NET address 192.168.10.10 and gateway 192.168.10.1.,26126
+Screenshot 2026-07-20 154153.png,Curated,08-dashboards-screenshots/pfsense/03-ubuntu-dmz-ip-route.png,Ubuntu DMZ address and routing table.,59675
+Screenshot 2026-07-20 154330.png,Curated,08-dashboards-screenshots/pfsense/04-pfsense-interface-assignments.png,"WAN, USER, DMZ, and SOC_ADMIN interface assignment.",49500
+Screenshot 2026-07-20 154728.png,Curated,08-dashboards-screenshots/pfsense/05-pfsense-wan-user-status.png,pfSense WAN and USER interface status.,74713
+Screenshot 2026-07-20 154740.png,Curated,08-dashboards-screenshots/pfsense/06-pfsense-dmz-socadmin-status.png,pfSense DMZ and SOC_ADMIN interface status.,71658
+Screenshot 2026-07-20 155348.png,Curated,08-dashboards-screenshots/pfsense/07-dmz-web-server-alias.png,DMZ_WEB_SERVER alias mapped to 192.168.20.10.,33577
+Screenshot 2026-07-20 155400.png,Curated,08-dashboards-screenshots/pfsense/08-service-port-aliases.png,WEB_PORTS and ADMIN_PORTS aliases.,28491
+Screenshot 2026-07-20 163155.png,Curated,08-dashboards-screenshots/pfsense/09-user-firewall-rules-initial.png,Initial USER interface firewall rules.,101146
+Screenshot 2026-07-20 163209.png,Curated,08-dashboards-screenshots/pfsense/10-dmz-firewall-rules-initial.png,Initial DMZ interface firewall rules.,63995
+Screenshot 2026-07-20 163450.png,Curated,08-dashboards-screenshots/pfsense/11-socadmin-firewall-rules-initial.png,Initial SOC_ADMIN firewall rules.,47257
+Screenshot 2026-07-20 212934.png,Curated,08-dashboards-screenshots/pfsense/12-user-http-curl-success.png,Nginx page returned to USER client.,30969
+Screenshot 2026-07-20 212946.png,Curated,08-dashboards-screenshots/pfsense/13-user-to-dmz-http-port80-passed.png,TCP/80 test succeeded from USER_NET.,11501
+Screenshot 2026-07-20 213138.png,Curated,08-dashboards-screenshots/pfsense/14-user-to-dmz-ssh-blocked.png,TCP/22 and SSH tests failed from USER_NET.,23287
+Screenshot 2026-07-20 213248.png,Curated,08-dashboards-screenshots/pfsense/15-user-to-dmz-smb-blocked.png,TCP/445 test failed from USER_NET.,18899
+Screenshot 2026-07-20 213318.png,Curated,08-dashboards-screenshots/pfsense/16-user-to-dmz-rdp-blocked.png,TCP/3389 test failed from USER_NET.,19700
+Screenshot 2026-07-20 213546.png,Curated,08-dashboards-screenshots/pfsense/17-pfsense-blocked-admin-port-logs.png,Firewall logs for denied USER-to-DMZ administrative traffic.,59550
+Screenshot 2026-07-20 220707.png,Curated,08-dashboards-screenshots/pfsense/18-socadmin-to-dmz-ssh-passed.png,SOC_ADMIN access to pfSense management and DMZ SSH succeeded.,24130
+Screenshot 2026-07-21 205448.png,Curated,08-dashboards-screenshots/suricata/01-suricata-version-and-features.png,Suricata build and feature information.,109180
+Screenshot 2026-07-21 205500.png,Curated,08-dashboards-screenshots/suricata/02-suricata-initial-interface-error.png,Initial eth0 capture-interface error during service startup.,149935
+Screenshot 2026-07-21 205919.png,Curated,08-dashboards-screenshots/suricata/03-ubuntu-interface-verification.png,Actual Ubuntu interface name and routes.,59801
+Screenshot 2026-07-21 210407.png,Curated,08-dashboards-screenshots/suricata/04-suricata-home-net-configuration.png,HOME_NET configuration review.,108845
+Screenshot 2026-07-21 210632.png,Curated,08-dashboards-screenshots/suricata/05-suricata-af-packet-configuration.png,AF_PACKET capture configuration review.,57907
+Screenshot 2026-07-21 210754.png,Curated,08-dashboards-screenshots/suricata/06-suricata-config-validation.png,Suricata configuration test completed successfully.,103706
+Screenshot 2026-07-21 210851.png,Curated,08-dashboards-screenshots/suricata/07-suricata-service-active.png,Suricata service active after correction.,150199
+Screenshot 2026-07-21 215658.png,Curated,08-dashboards-screenshots/suricata/08-safe-web-attack-test-requests.png,Safe SQLi/XSS HTTP requests sent from Windows.,25706
+Screenshot 2026-07-21 224102.png,Curated,08-dashboards-screenshots/suricata/09-suricata-fast-log-alerts.png,"LOCAL SQLi, XSS, and TCP SYN scan alerts in fast.log.",91949
+Screenshot 2026-07-21 231916.png,Curated,08-dashboards-screenshots/suricata/10-suricata-eve-json-alert-analysis.png,"jq-filtered EVE JSON alerts with source, destination, signature, and severity.",91098
+Screenshot 2026-07-22 102342.png,Curated,08-dashboards-screenshots/prometheus/01-docker-compose-services-up.png,"Prometheus, node_exporter, and Grafana containers running.",44466
+Screenshot 2026-07-22 104450.png,Curated,08-dashboards-screenshots/prometheus/02-prometheus-config-validation.png,promtool validation of prometheus.yml.,36706
+Screenshot 2026-07-22 104501.png,Curated,08-dashboards-screenshots/prometheus/03-prometheus-alert-rules-validation.png,promtool validation of alert rules.,21098
+Screenshot 2026-07-22 104856.png,Curated,08-dashboards-screenshots/prometheus/04-node-exporter-metrics-endpoint.png,node_exporter metrics endpoint response.,101692
+Screenshot 2026-07-22 105247.png,Curated,08-dashboards-screenshots/prometheus/05-prometheus-health-grafana-login.png,Prometheus health and Grafana login endpoint checks.,75515
+Screenshot 2026-07-22 105401.png,Curated,08-dashboards-screenshots/prometheus/06-node-metric-query-cli.png,CLI validation of node metrics.,67409
+Screenshot 2026-07-22 160326.png,Raw only,,Supporting or redundant capture retained in raw evidence.,28632
+Screenshot 2026-07-22 161905.png,Curated,08-dashboards-screenshots/prometheus/07-prometheus-targets-up.png,Prometheus and ubuntu-node targets in UP state.,42841
+Screenshot 2026-07-22 162435.png,Curated,08-dashboards-screenshots/grafana/01-grafana-prometheus-datasource.png,Grafana Prometheus data source URL.,42083
+Screenshot 2026-07-22 162515.png,Curated,08-dashboards-screenshots/grafana/02-grafana-datasource-query-success.png,Successful Grafana query to Prometheus.,42033
+Screenshot 2026-07-22 230718.png,Curated,08-dashboards-screenshots/grafana/03-stress-ng-cpu-test-command.png,Controlled CPU load generation.,21940
+Screenshot 2026-07-22 230742.png,Curated,08-dashboards-screenshots/grafana/04-top-cpu-load-evidence.png,High CPU utilization during stress test.,151898
+Screenshot 2026-07-22 231950.png,Curated,08-dashboards-screenshots/suricata/13-nginx-access-log-test-traffic.png,Nginx access log for generated requests.,172146
+Screenshot 2026-07-22 232049.png,Curated,08-dashboards-screenshots/prometheus/08-prometheus-alert-rules-page.png,Prometheus alerting rules page.,50887
+Screenshot 2026-07-22 234500.png,Curated,08-dashboards-screenshots/prometheus/09-prometheus-targets-final-up.png,Final targets view with both targets UP.,31847
+Screenshot 2026-07-22 234511.png,Curated,08-dashboards-screenshots/prometheus/10-host-container-time-alignment.png,Local-time and UTC comparison for timestamp correlation.,22110
+Screenshot 2026-07-23 095539.png,Curated,08-dashboards-screenshots/suricata/11-local-rules-editor.png,Local rules in editor.,57974
+Screenshot 2026-07-23 101018.png,Curated,08-dashboards-screenshots/suricata/12-local-rules-final.png,Final three custom Suricata rules and SIDs.,88708
+Screenshot 2026-07-23 113001.png,Curated,08-dashboards-screenshots/prometheus/11-cpu-query-api-result.png,Prometheus API result for CPU metric.,61708
+Screenshot 2026-07-23 152230.png,Curated,08-dashboards-screenshots/prometheus/12-cpu-promql-result.png,CPU PromQL query in Prometheus UI.,32262
+Screenshot 2026-07-23 153808.png,Curated,08-dashboards-screenshots/prometheus/13-memory-promql-result.png,Memory usage query result.,23652
+Screenshot 2026-07-23 154511.png,Curated,08-dashboards-screenshots/prometheus/14-disk-promql-result.png,Disk usage query result.,30697
+Screenshot 2026-07-23 154632.png,Curated,08-dashboards-screenshots/prometheus/15-network-rx-promql-result.png,Network receive-rate query result.,17962
+Screenshot 2026-07-23 154836.png,Curated,08-dashboards-screenshots/prometheus/16-network-tx-promql-result.png,Network transmit-rate query result.,18013
+Screenshot 2026-07-23 161500.png,Curated,08-dashboards-screenshots/grafana/05-stress-ng-all-cpu-test.png,Second controlled CPU stress test.,53189
+Screenshot 2026-07-23 161510.png,Curated,08-dashboards-screenshots/grafana/06-grafana-cpu-dashboard.png,Node Exporter Full CPU panels and test spike.,133543
+Screenshot 2026-07-23 161539.png,Curated,08-dashboards-screenshots/grafana/07-grafana-memory-dashboard.png,Memory panels.,93885
+Screenshot 2026-07-23 161557.png,Curated,08-dashboards-screenshots/grafana/08-grafana-network-dashboard.png,Network traffic panels.,135131
+Screenshot 2026-07-23 161608.png,Curated,08-dashboards-screenshots/grafana/09-grafana-disk-io-dashboard.png,Disk I/O panels.,42661
+Screenshot 2026-07-23 161615.png,Curated,08-dashboards-screenshots/grafana/10-grafana-filesystem-dashboard.png,Filesystem panels.,74083
+Screenshot 2026-07-23 161623.png,Curated,08-dashboards-screenshots/grafana/11-grafana-disk-utilization-dashboard.png,Disk utilization panels.,62318
+Screenshot 2026-07-23 161632.png,Curated,08-dashboards-screenshots/grafana/12-grafana-pressure-dashboard.png,Pressure stall information panels.,81113
+Screenshot 2026-07-23 161856.png,Curated,08-dashboards-screenshots/prometheus/17-alert-rules-returned-to-normal.png,Alert rules in normal state after stress ended.,35569
+Screenshot 2026-07-23 171420.png,Curated,08-dashboards-screenshots/pfsense/19-socadmin-firewall-rules-final.png,Final SOC_ADMIN rules including SSH and monitoring access.,70253
+Screenshot 2026-07-23 171429.png,Curated,08-dashboards-screenshots/pfsense/20-dmz-firewall-rules-final.png,Final DMZ rules.,48718
+Screenshot 2026-07-23 171439.png,Curated,08-dashboards-screenshots/pfsense/21-user-firewall-rules-final.png,Final USER rules before final access validation.,102418
+Screenshot 2026-07-23 172802.png,Curated,08-dashboards-screenshots/pfsense/22-socadmin-to-grafana-passed.png,SOC_ADMIN to Grafana TCP/3000 succeeded.,11990
+Screenshot 2026-07-23 173017.png,Curated,08-dashboards-screenshots/pfsense/23-socadmin-to-prometheus-passed.png,SOC_ADMIN to Prometheus TCP/9090 succeeded.,12468
+Screenshot 2026-07-23 201156.png,Curated,08-dashboards-screenshots/pfsense/24-user-to-grafana-blocked.png,USER_NET to Grafana TCP/3000 failed.,19320
+Screenshot 2026-07-23 201203.png,Curated,08-dashboards-screenshots/pfsense/25-user-to-prometheus-blocked.png,USER_NET to Prometheus TCP/9090 failed.,20260
+Screenshot 2026-07-23 202322.png,Curated,08-dashboards-screenshots/pfsense/27-pfsense-monitoring-access-logs.png,Firewall log evidence around monitoring access tests.,112750
+Screenshot 2026-07-23 202338.png,Curated,08-dashboards-screenshots/pfsense/26-user-firewall-rules-final.png,Final USER rules after monitoring restrictions.,89945
+Screenshot 2026-07-23 202359.png,Curated,08-dashboards-screenshots/pfsense/28-pfsense-final-firewall-logs.png,Final pfSense firewall log view.,149171
