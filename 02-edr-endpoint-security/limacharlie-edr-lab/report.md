@@ -34,23 +34,23 @@ Endpoint isolation was also tested. Ping and HTTP access to the Ubuntu/Wazuh ser
 ## 4. Architecture
 
 ```text
-                       LimaCharlie Cloud EDR
-                     /          |            \
-                    /           |             \
-             Telemetry     D&R detections    Response console
-                  |              |                  |
-                  v              v                  v
-        WIN-ENDPOINT / win-endpoint.lan / 192.168.56.20
-        â”œâ”€â”€ LimaCharlie sensor
-        â”œâ”€â”€ Sysmon Event ID 1
-        â”œâ”€â”€ Wazuh agent
-        â””â”€â”€ Safe PowerShell and discovery commands
+                        LimaCharlie Cloud EDR
+                   /             |               \
+                  /              |                \
+              Telemetry   D&R detections    Response console
+                 |               |                 |
+                 v               v                 v
+           WIN-ENDPOINT / win-endpoint.lan / 192.168.56.20
+        LimaCharlie sensor
+        Sysmon Event ID 1
+        Wazuh agent
+        Safe PowerShell and discovery commands
                   |
                   | Sysmon and Windows telemetry
                   v
         SOC-WAZUH / 192.168.56.10
-        â”œâ”€â”€ Wazuh manager, indexer, and dashboard
-        â””â”€â”€ Nginx service used for connectivity testing
+        Wazuh manager, indexer, and dashboard
+        Nginx service used for connectivity testing
 ```
 
 ## 5. Sensor Deployment
@@ -70,7 +70,7 @@ The LimaCharlie Sensors page showed `win-endpoint.lan` online. Windows PowerShel
 
 **Result:** Passed.
 
-## 6. Detection 1 â€” Suspicious Encoded PowerShell
+## 6. Detection 1 — Suspicious Encoded PowerShell
 
 ### 6.1 Safe Test Command
 
@@ -96,7 +96,7 @@ The rule detects `powershell.exe` or `pwsh.exe` when the command line contains i
 - `DownloadString`
 - `IEX`
 
-MITRE ATT&CK: **T1059.001 â€” PowerShell**.
+MITRE ATT&CK: **T1059.001 — PowerShell**.
 
 ### 6.3 LimaCharlie Telemetry
 
@@ -143,7 +143,7 @@ A normal PowerShell process matched a lower-severity Wazuh rule (`92027`, level 
 
 The current screenshots prove telemetry and SIEM detection, but they do not prove that the LimaCharlie custom rule generated a detection card.
 
-## 7. Detection 2 â€” Windows Reconnaissance Commands
+## 7. Detection 2 — Windows Reconnaissance Commands
 
 ### 7.1 Detection Logic
 
