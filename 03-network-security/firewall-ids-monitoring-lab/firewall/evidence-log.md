@@ -1,6 +1,6 @@
 # Firewall Evidence Log
 
-See the complete [pfSense evidence directory](../screenshots/pfsense) and [Week 4 evidence index](../screenshots/week4-evidence-index.md).
+See the complete [pfSense evidence directory](../screenshots/pfsense) and [Week 4 evidence index](../screenshots/evidence-index.md).
 
 The most important proof points are:
 
