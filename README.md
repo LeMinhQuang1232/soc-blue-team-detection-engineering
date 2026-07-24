@@ -13,7 +13,7 @@ The portfolio is organized by **security function**, while each project remains 
 | 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | SIEM / telemetry collection | Completed | [Screenshots](01-siem/wazuh-log-onboarding/screenshots/) |
 | 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Detection rules / alert analysis | Completed | [Detections](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/) |
 | 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Endpoint telemetry / response | Completed | [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/) |
-| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week5-evidence-index.md) |
+| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week4-evidence-index.md) |
 
 ## Repository Structure
 

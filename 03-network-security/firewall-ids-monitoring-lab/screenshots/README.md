@@ -1,4 +1,4 @@
-# Week 5 Evidence Library
+# Week 4 Evidence Library
 
 Curated evidence is grouped by tool:
 
@@ -6,7 +6,7 @@ Curated evidence is grouped by tool:
 - [Suricata](suricata)
 - [Prometheus](prometheus)
 - [Grafana](grafana)
-- [Complete raw screenshot set](week5-raw-evidence)
-- [Evidence index](week5-evidence-index.md)
+- [Complete raw screenshot set](week4-raw-evidence)
+- [Evidence index](week4-evidence-index.md)
 
 The raw directory preserves all 71 supplied screenshots. Curated copies use descriptive names so reports can link to stable, readable paths.

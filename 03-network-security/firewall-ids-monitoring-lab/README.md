@@ -18,7 +18,7 @@ All suspicious traffic was intentionally generated in an isolated lab. The proje
 | [Monitoring stack](monitoring/) | Docker Compose, Prometheus, node_exporter, Grafana, PromQL, and metrics analysis |
 | [Incident reports](incident-reports/) | Blocked admin access, web-attack detection, and controlled metrics anomaly |
 | [Scripts and configuration](scripts/) | Safe test generators and reusable configuration files |
-| [Evidence index](screenshots/week5-evidence-index.md) | Curated screenshot catalogue grouped by tool |
+| [Evidence index](screenshots/week4-evidence-index.md) | Curated screenshot catalogue grouped by tool |
 | [All screenshots](screenshots/) | pfSense, Suricata, Prometheus, Grafana, and original evidence |
 
 ## Architecture
