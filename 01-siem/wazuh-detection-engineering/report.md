@@ -31,8 +31,8 @@ The environment evidence shows Wazuh 4.14.6, active Wazuh services, an active lo
 ```text
 WIN-ENDPOINT (192.168.56.20)
   ├─ Windows Security 4625 / 4624 ─┐
-  ├─ Sysmon Event ID 1 ────────────┼─ Wazuh agent ─┐
-  └─ Safe curl / SSH test traffic ─┘               │
+  ├─ Sysmon Event ID 1 ────────────┼─ Wazuh agent ──┐
+  └─ Safe curl / SSH test traffic ─┘                │
                                                     v
 SOC-WAZUH (192.168.56.10)                    Wazuh analysis engine
   ├─ /var/log/auth.log --------------------------> built-in rules
@@ -172,7 +172,6 @@ Nginx logged encoded SQLi, XSS, and traversal patterns from `192.168.56.20`. Waz
 - No active response, account lockout automation, endpoint isolation, WAF, or SOAR workflow was deployed.
 - The success-after-failures case was manually correlated.
 - No full packet capture, application backend, threat-intelligence enrichment, or malware analysis was included.
-- HTTP status codes and signatures cannot alone prove exploit success or failure.
 
 ## 14. Lessons Learned
 
