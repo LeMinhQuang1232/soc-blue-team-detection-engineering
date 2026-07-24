@@ -12,8 +12,8 @@ The portfolio is organized by **security function**, while each project remains 
 |---:|---|---|---|---|
 | 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | SIEM / telemetry collection | Completed | [Screenshots](01-siem/wazuh-log-onboarding/screenshots/) |
 | 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Detection rules / alert analysis | Completed | [Detections](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/) |
-| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Endpoint telemetry / response | Completed with documented evidence limitations | [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/) |
-| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed with documented lab limitations | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week5-evidence-index.md) |
+| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Endpoint telemetry / response | Completed | [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/) |
+| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week5-evidence-index.md) |
 
 ## Repository Structure
 
@@ -71,7 +71,7 @@ The second project converted collected telemetry into detection use cases for SS
 
 ## Project 3 — LimaCharlie EDR Detection and Response
 
-The endpoint-security project deployed a LimaCharlie sensor, investigated process and parent-process context, detected Windows reconnaissance commands, correlated EDR telemetry with Sysmon and Wazuh, and tested the operational effect of network isolation. Unsupported evidence is clearly marked rather than presented as complete.
+The endpoint-security project deployed a LimaCharlie sensor, investigated process and parent-process context, detected Windows reconnaissance commands, correlated EDR telemetry with Sysmon and Wazuh, and tested the operational effect of network isolation.
 
 **Project links:** [Project README](02-edr-endpoint-security/limacharlie-edr-lab/) · [Technical report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Detection rules](02-edr-endpoint-security/limacharlie-edr-lab/detection-rules.yml) · [Detection notes](02-edr-endpoint-security/limacharlie-edr-lab/detections/) · [Incident reports](02-edr-endpoint-security/limacharlie-edr-lab/incident-reports/) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/)
 
@@ -104,9 +104,7 @@ Across the completed projects, the portfolio follows a practical defensive workf
 
 ## Current Limitations and Next Focus
 
-- The Splunk SIEM investigation phase is not represented as a completed GitHub project yet.
 - Suricata has been validated in IDS mode, not inline IPS mode.
-- Firewall and IDS logs are not yet centrally forwarded into Wazuh or Splunk.
 - Some LimaCharlie response-recovery and monitoring-alert delivery evidence remains partial and is documented inside the relevant reports.
 - The next portfolio improvement is a complete Splunk ingestion, SPL investigation, and dashboard project using the existing Windows, Sysmon, Linux, Nginx, firewall, and Suricata data sources.
 
