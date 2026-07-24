@@ -1,4 +1,4 @@
-# Week 2 Report — Wazuh Detection Engineering and Alert Investigation
+# Wazuh Detection Engineering and Alert Investigation Report
 
 ## 1. Executive Summary
 
