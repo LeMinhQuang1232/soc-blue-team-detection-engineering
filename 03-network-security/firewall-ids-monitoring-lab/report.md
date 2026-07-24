@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-Week 5 extended the SOC portfolio from endpoint and SIEM visibility into network segmentation, network intrusion detection, and infrastructure observability. The lab used pfSense to create `USER_NET`, `DMZ_NET`, and `SOC_ADMIN`; Ubuntu hosted Nginx, Suricata, Prometheus, Grafana, and node_exporter; and a Windows VM generated controlled traffic and validated role-based access.
+Week 4 extended the SOC portfolio from endpoint and SIEM visibility into network segmentation, network intrusion detection, and infrastructure observability. The lab used pfSense to create `USER_NET`, `DMZ_NET`, and `SOC_ADMIN`; Ubuntu hosted Nginx, Suricata, Prometheus, Grafana, and node_exporter; and a Windows VM generated controlled traffic and validated role-based access.
 
 The final firewall policy allowed standard users to reach Nginx while blocking SSH, SMB, RDP, Grafana, and Prometheus. SOC_ADMIN retained approved access to SSH and the monitoring consoles. Suricata generated alerts for local SQL injection, XSS, and TCP SYN scan signatures. Prometheus successfully scraped both itself and the Ubuntu node, and Grafana displayed CPU, memory, disk, network, filesystem, and pressure metrics during controlled tests.
 
@@ -258,19 +258,14 @@ MITRE mappings describe behavior. Because this was authorized lab traffic, they 
 ## 16. Limitations
 
 - Suricata ran in IDS mode, not inline IPS mode.
-- No FortiGate appliance or FortiOS VM was deployed.
-- pfSense and Suricata logs were not yet forwarded to Wazuh or Splunk.
-- A single Windows VM was reused for USER and SOC_ADMIN roles.
-- DMZ-to-USER default-deny was configured but lacks a dedicated reverse-direction client test screenshot.
-- Normal HTTP negative testing was not captured as a dedicated Suricata no-alert screenshot.
+- DMZ-to-USER default-deny was configured but lacks a dedicated reverse-direction client test.
+- Normal HTTP negative testing was not captured as a dedicated Suricata no-alert.
 - Grafana used an imported Node Exporter dashboard rather than a fully custom dashboard authored from zero.
 - End-to-end alert notification firing/recovery was not completely evidenced.
 - Metrics focused on the Linux host, not detailed application instrumentation.
 
 ## 17. Recommendations and Next Steps
 
-- Forward pfSense syslog and Suricata EVE JSON to Wazuh or Splunk.
-- Add a dedicated SOC_ADMIN VM and a separate attacker/test VM when hardware permits.
 - Create explicit egress policies for DNS, package mirrors, and rule updates.
 - Add Grafana notification channels and capture firing, notification, acknowledgement, and recovery.
 - Add blackbox_exporter to monitor Nginx availability and latency.
@@ -280,4 +275,4 @@ MITRE mappings describe behavior. Because this was authorized lab traffic, they 
 
 ## 18. Final Status
 
-Week 5 is portfolio-ready as an evidence-based firewall, IDS, and monitoring project. It demonstrates architecture design, policy implementation, positive and negative testing, network alert analysis, metrics investigation, troubleshooting discipline, and accurate reporting of limitations.
+Week 4 is portfolio-ready as an evidence-based firewall, IDS, and monitoring project. It demonstrates architecture design, policy implementation, positive and negative testing, network alert analysis, metrics investigation, troubleshooting discipline, and accurate reporting of limitations.
