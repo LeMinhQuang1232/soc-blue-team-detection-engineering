@@ -14,6 +14,21 @@ This project extends the Week 1 Wazuh log-onboarding lab by creating, testing, a
 - Perform alert triage.
 - Write SOC-style incident reports.
 
+## What I Built
+
+- Custom Wazuh rules for SSH brute-force activity, repeated Windows logon failures, suspicious PowerShell execution, SQL injection, and XSS patterns.
+- Controlled attack-simulation and validation procedures using benign lab commands.
+- Detection documents explaining the data source, rule logic, expected result, MITRE ATT&CK mapping, and limitations.
+- Incident reports for SSH brute force, suspicious PowerShell, and web attack activity.
+- A repeatable rule-testing workflow using raw logs, Wazuh Logtest, dashboard searches, and expanded alert evidence.
+
+## What I Learned
+
+- A custom Wazuh rule depends on the correct decoder and parent rule before frequency or pattern logic can work.
+- Detection validation requires both positive tests and normal baseline activity.
+- A matching command-line string does not automatically prove malicious intent; process context and surrounding telemetry still matter.
+- Detection documentation should separate configured logic, observed telemetry, and conclusions supported by evidence.
+
 ## Environment
 
 | Host | IP | Role |
@@ -56,3 +71,13 @@ The lab transformed previously onboarded telemetry into evidence-backed Wazuh de
 ## Safety Notice
 
 All activities were performed in an isolated personal lab using authorized systems and harmless test commands. No malware, destructive payload, or unauthorized external target was used.
+
+<!-- EVIDENCE-NAVIGATION:START -->
+## Evidence Navigation
+
+- [Complete screenshot evidence index](screenshots/evidence-index.md)
+- [Technical report](report.md)
+- [Evidence log](evidence-log.md)
+- [Validation tests](validation-tests.md)
+
+<!-- EVIDENCE-NAVIGATION:END -->

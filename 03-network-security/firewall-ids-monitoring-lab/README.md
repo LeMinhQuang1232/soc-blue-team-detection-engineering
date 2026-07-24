@@ -6,6 +6,24 @@ This project extends the SOC portfolio from endpoint and SIEM telemetry into net
 
 All suspicious traffic was intentionally generated in an isolated lab. The project does not claim a real compromise or successful exploitation.
 
+## What I Built
+
+- A three-zone virtual network using USER_NET, DMZ_NET, and SOC_ADMIN.
+- Least-privilege pfSense firewall policies controlling web, administrative, and monitoring access.
+- An Ubuntu DMZ server hosting Nginx.
+- A Suricata IDS sensor with custom SQL injection, XSS, and TCP SYN scan rules.
+- A Prometheus, node_exporter, and Grafana monitoring stack.
+- Validation tests for permitted traffic, denied administrative access, IDS alerts, service health, and infrastructure metrics.
+- Incident-style reports for blocked lateral movement, web attack patterns, and metrics anomalies.
+
+## What I Learned
+
+- A firewall pass rule does not guarantee application availability when a host firewall still blocks the connection.
+- IDS interface configuration must match the actual network-interface name used by the operating system.
+- Monitoring dashboards depend on correct data-source URLs, metric labels, query time ranges, and synchronized clocks.
+- Administrative monitoring interfaces should be restricted to the SOC_ADMIN network rather than exposed to normal users.
+- Detection evidence must distinguish configured logic from activity that was fully observed and validated.
+
 ## Start Here
 
 | Resource | Description |
@@ -18,7 +36,7 @@ All suspicious traffic was intentionally generated in an isolated lab. The proje
 | [Monitoring stack](monitoring/) | Docker Compose, Prometheus, node_exporter, Grafana, PromQL, and metrics analysis |
 | [Incident reports](incident-reports/) | Blocked admin access, web-attack detection, and controlled metrics anomaly |
 | [Scripts and configuration](scripts/) | Safe test generators and reusable configuration files |
-| [Evidence index](screenshots/week4-evidence-index.md) | Curated screenshot catalogue grouped by tool |
+| [Evidence index](screenshots/evidence-index.md) | Curated screenshot catalogue grouped by tool |
 | [All screenshots](screenshots/) | pfSense, Suricata, Prometheus, Grafana, and original evidence |
 
 ## Architecture
@@ -67,3 +85,12 @@ All suspicious traffic was intentionally generated in an isolated lab. The proje
 - pfSense and Suricata logs were not yet forwarded into Wazuh or Splunk.
 - Grafana/Prometheus query validation passed, but complete alert firing, notification delivery, and recovery evidence is partial.
 - The rules are educational signatures and need production tuning.
+
+<!-- EVIDENCE-NAVIGATION:START -->
+## Evidence Navigation
+
+- [Complete screenshot evidence index](screenshots/evidence-index.md)
+- [Technical report](report.md)
+- [Validation summary](validation-summary.md)
+
+<!-- EVIDENCE-NAVIGATION:END -->

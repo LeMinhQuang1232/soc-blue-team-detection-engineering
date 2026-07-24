@@ -6,14 +6,54 @@ This repository documents a hands-on SOC Blue Team learning environment built to
 
 The portfolio is organized by **security function**, while each project remains self-contained. A reviewer can open one project folder and find its report, validation results, evidence, rules or configuration, troubleshooting notes, and screenshots without searching across unrelated directories.
 
+> The lab reused one Windows virtual machine between the USER and SOC_ADMIN roles during controlled validation. Suricata was deployed as an IDS sensor rather than an inline IPS.
+
+## Lab Architecture
+
+```mermaid
+flowchart LR
+    WIN["Windows Endpoint<br/>USER / SOC_ADMIN test roles"]
+
+    WIN -->|"Windows Security and Sysmon telemetry"| WAZUH["Wazuh SIEM<br/>Ubuntu Server"]
+    WIN -->|"Endpoint telemetry and response"| LC["LimaCharlie EDR"]
+    WIN --> PFS["pfSense Firewall"]
+
+    PFS --> USER["USER_NET<br/>192.168.10.0/24"]
+    PFS --> DMZ["DMZ_NET<br/>192.168.20.0/24"]
+    PFS --> ADMIN["SOC_ADMIN<br/>192.168.30.0/24"]
+
+    DMZ --> UBUNTU["Ubuntu DMZ Server<br/>192.168.20.10"]
+
+    UBUNTU --> NGINX["Nginx Web Service"]
+    UBUNTU --> SURICATA["Suricata IDS"]
+    UBUNTU --> PROM["Prometheus and node_exporter"]
+    PROM --> GRAFANA["Grafana Dashboards"]
+
+    USER -->|"HTTP allowed<br/>administrative ports blocked"| DMZ
+    ADMIN -->|"SSH and monitoring access allowed"| DMZ
+```
+
 ## Project Progress
 
-| # | Project | Area | Status | Main Evidence |
-|---:|---|---|---|---|
-| 1 | [Wazuh Log Onboarding](01-siem/wazuh-log-onboarding/) | SIEM / telemetry collection | Completed | [Screenshots](01-siem/wazuh-log-onboarding/screenshots/) |
-| 2 | [Wazuh Detection Engineering](01-siem/wazuh-detection-engineering/) | Detection rules / alert analysis | Completed | [Detections](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/) |
-| 3 | [LimaCharlie EDR Detection and Response](02-edr-endpoint-security/limacharlie-edr-lab/) | Endpoint telemetry / response | Completed | [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/) |
-| 4 | [Firewall, IDS, and Monitoring Lab](03-network-security/firewall-ids-monitoring-lab/) | Network security / observability | Completed | [Report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Evidence index](03-network-security/firewall-ids-monitoring-lab/screenshots/week4-evidence-index.md) |
+| Project | Focus | Documentation | Evidence |
+|---|---|---|---|
+| Wazuh Log Onboarding | Windows, Sysmon, Linux, and Nginx log collection | [Project README](01-siem/wazuh-log-onboarding/README.md) · [Report](01-siem/wazuh-log-onboarding/report.md) | [Screenshot evidence](01-siem/wazuh-log-onboarding/screenshots/evidence-index.md) |
+| Wazuh Detection Engineering | Custom detections, validation, and alert investigation | [Project README](01-siem/wazuh-detection-engineering/README.md) · [Report](01-siem/wazuh-detection-engineering/report.md) | [Screenshot evidence](01-siem/wazuh-detection-engineering/screenshots/evidence-index.md) |
+| LimaCharlie EDR | Endpoint telemetry, detection, investigation, and isolation | [Project README](02-edr-endpoint-security/limacharlie-edr-lab/README.md) · [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) | [Screenshot evidence](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/evidence-index.md) |
+| Firewall, IDS, and Monitoring | pfSense segmentation, Suricata IDS, Prometheus, and Grafana | [Project README](03-network-security/firewall-ids-monitoring-lab/README.md) · [Report](03-network-security/firewall-ids-monitoring-lab/report.md) | [Screenshot evidence](03-network-security/firewall-ids-monitoring-lab/screenshots/evidence-index.md) |
+
+## Key Outcomes
+
+| Area | Outcome |
+|---|---|
+| Log collection | Onboarded Windows Security, Sysmon, Linux authentication, and Nginx logs into Wazuh |
+| Detection engineering | Developed and validated detections for brute force, suspicious PowerShell, web attacks, and reconnaissance |
+| Endpoint response | Investigated LimaCharlie telemetry and tested endpoint network isolation and recovery |
+| Network security | Enforced USER, DMZ, and SOC_ADMIN segmentation using pfSense |
+| Network detection | Created Suricata rules for SQL injection, XSS, and TCP SYN scan activity |
+| Monitoring | Collected Linux host metrics using Prometheus and visualized them in Grafana |
+| Troubleshooting | Diagnosed host firewall, interface selection, service health, DNS, and monitoring data-source issues |
+| Reporting | Produced evidence logs, validation records, troubleshooting notes, and incident reports |
 
 ## Repository Structure
 

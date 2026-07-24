@@ -9,6 +9,21 @@ The lab includes:
 - NAT networking for internet access.
 - Host-Only networking for stable communication between the two VMs.
 
+## What I Built
+
+- A local Wazuh all-in-one SIEM environment on Ubuntu Server.
+- A Windows endpoint running the Wazuh agent and Sysmon.
+- Collection pipelines for Windows Security events, Sysmon telemetry, Linux authentication logs, and Nginx access logs.
+- Controlled validation tests for authentication failures, process execution, network connections, file creation, SSH activity, and HTTP requests.
+- Evidence logs linking raw host activity to events visible in Wazuh.
+
+## What I Learned
+
+- Successful agent installation does not guarantee complete telemetry; each event channel must be enabled and validated separately.
+- Raw host logs should be compared with normalized SIEM events before trusting dashboards or detection logic.
+- Network reachability, service health, time synchronization, and log permissions directly affect log ingestion.
+- Good onboarding documentation should record the source host, timestamp, event identifier, data source, observed result, and supporting evidence.
+
 ## Project results
 
 The following activities were successfully validated:
@@ -63,3 +78,14 @@ The following activities were successfully validated:
 All activity was intentionally generated inside a private VirtualBox lab. No malware, destructive commands, or external targets were used.
 
 Screenshots that displayed the generated Wazuh administrator password were removed before this project was prepared for GitHub.
+
+<!-- EVIDENCE-NAVIGATION:START -->
+## Evidence Navigation
+
+- [Complete screenshot evidence index](screenshots/evidence-index.md)
+- [Technical report](report.md)
+- [Evidence log](evidence-log.md)
+- [Validation tests](validation-tests.md)
+- [Troubleshooting notes](troubleshooting.md)
+
+<!-- EVIDENCE-NAVIGATION:END -->
