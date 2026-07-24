@@ -1,4 +1,4 @@
-﻿# Week 3 Report — LimaCharlie EDR Detection and Response
+﻿# LimaCharlie EDR Detection and Response Report
 
 ## 1. Executive Summary
 
