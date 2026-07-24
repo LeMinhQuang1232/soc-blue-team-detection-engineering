@@ -13,8 +13,8 @@ The project is presented as the third completed portfolio phase so it follows th
 | LimaCharlie Windows sensor | Passed |
 | Sensor service running automatically | Passed |
 | Encoded PowerShell telemetry | Passed |
-| LimaCharlie encoded-PowerShell alert | Pending Evidence |
-| Windows reconnaissance detection | Passed â€” four detections |
+| LimaCharlie encoded-PowerShell alert | Passed |
+| Windows reconnaissance detection | Passed |
 | Sysmon process correlation | Passed |
 | Wazuh encoded PowerShell correlation | Passed |
 | Network isolation effect | Passed |
