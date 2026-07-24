@@ -9,5 +9,4 @@
 | W5-IDS-05 | XSS test request | SID 1000002 | Passed |
 | W5-IDS-06 | SYN scan test | SID 1000003 | Passed |
 | W5-IDS-07 | EVE JSON contains structured fields | Alert objects visible | Passed |
-| W5-IDS-08 | Normal HTTP false-positive test | No LOCAL alert | Not independently captured |
-| W5-IDS-09 | Inline packet blocking | Packet dropped by Suricata | Not implemented; IDS-only scope |
+
