@@ -105,7 +105,7 @@ Across the completed projects, the portfolio follows a practical defensive workf
 ## Current Limitations and Next Focus
 
 - Suricata has been validated in IDS mode, not inline IPS mode.
-- Some LimaCharlie response-recovery and monitoring-alert delivery evidence remains partial and is documented inside the relevant reports.
+- Some LimaCharlie response-recovery and monitoring-alert delivery evidence remains partial.
 - The next portfolio improvement is a complete Splunk ingestion, SPL investigation, and dashboard project using the existing Windows, Sysmon, Linux, Nginx, firewall, and Suricata data sources.
 
 ## Evidence Policy
