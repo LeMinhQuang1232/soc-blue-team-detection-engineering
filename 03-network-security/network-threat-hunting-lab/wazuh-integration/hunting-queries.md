@@ -2,7 +2,7 @@
 
 Use one of the following dashboard queries, depending on available field mapping.
 
-## All Phase 1 Detector Alerts
+## All Detector Alerts
 
 ```text
 rule.id:(100201 OR 100202 OR 100203)
