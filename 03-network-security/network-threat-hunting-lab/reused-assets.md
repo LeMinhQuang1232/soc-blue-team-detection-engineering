@@ -1,6 +1,6 @@
 # Reused Assets
 
-Phase 1 reused the previously completed firewall, IDS, and monitoring foundation rather than rebuilding the network.
+This project reused the previously completed firewall, IDS, and monitoring foundation rather than rebuilding the network.
 
 | Existing asset | Reuse in this project |
 |---|---|
