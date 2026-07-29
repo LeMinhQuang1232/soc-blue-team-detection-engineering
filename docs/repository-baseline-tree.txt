@@ -1,0 +1,385 @@
+﻿01-siem
+01-siem\README.md
+01-siem\wazuh-detection-engineering
+01-siem\wazuh-detection-engineering\.gitignore
+01-siem\wazuh-detection-engineering\custom-rules.xml
+01-siem\wazuh-detection-engineering\detections
+01-siem\wazuh-detection-engineering\detections\ssh-bruteforce.md
+01-siem\wazuh-detection-engineering\detections\successful-login-after-failures.md
+01-siem\wazuh-detection-engineering\detections\suspicious-powershell.md
+01-siem\wazuh-detection-engineering\detections\web-sqli-xss.md
+01-siem\wazuh-detection-engineering\detections\windows-failed-logons.md
+01-siem\wazuh-detection-engineering\evidence-log.md
+01-siem\wazuh-detection-engineering\incident-reports
+01-siem\wazuh-detection-engineering\incident-reports\ssh-bruteforce-incident.md
+01-siem\wazuh-detection-engineering\incident-reports\suspicious-powershell-incident.md
+01-siem\wazuh-detection-engineering\incident-reports\web-attack-incident.md
+01-siem\wazuh-detection-engineering\README.md
+01-siem\wazuh-detection-engineering\report.md
+01-siem\wazuh-detection-engineering\screenshots
+01-siem\wazuh-detection-engineering\screenshots\01-setup
+01-siem\wazuh-detection-engineering\screenshots\01-setup\01-wazuh-services-and-version.png
+01-siem\wazuh-detection-engineering\screenshots\01-setup\02-agent-control-active.png
+01-siem\wazuh-detection-engineering\screenshots\01-setup\03-agent-dashboard-active.png
+01-siem\wazuh-detection-engineering\screenshots\01-setup\04-built-in-rule-assessment.png
+01-siem\wazuh-detection-engineering\screenshots\01-setup\05-baseline-auth-and-nginx-logs.png
+01-siem\wazuh-detection-engineering\screenshots\02-ssh-bruteforce
+01-siem\wazuh-detection-engineering\screenshots\02-ssh-bruteforce\01-source-log.png
+01-siem\wazuh-detection-engineering\screenshots\02-ssh-bruteforce\02-wazuh-results.png
+01-siem\wazuh-detection-engineering\screenshots\02-ssh-bruteforce\03-custom-alert-results.png
+01-siem\wazuh-detection-engineering\screenshots\02-ssh-bruteforce\04-expanded-alert.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\01-event-viewer-4625.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\02-event-viewer-network-details.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\03-wazuh-results.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\04-custom-alert-results.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\05-expanded-alert-top.png
+01-siem\wazuh-detection-engineering\screenshots\03-windows-failed-logons\06-expanded-alert-bottom.png
+01-siem\wazuh-detection-engineering\screenshots\04-success-after-failures
+01-siem\wazuh-detection-engineering\screenshots\04-success-after-failures\01-successful-logon-top.png
+01-siem\wazuh-detection-engineering\screenshots\04-success-after-failures\02-successful-logon-bottom.png
+01-siem\wazuh-detection-engineering\screenshots\04-success-after-failures\03-4625-to-4624-timeline.png
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell\01-event-viewer-process-create.png
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell\02-event-viewer-process-details.png
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell\03-custom-alert-results.png
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell\04-expanded-alert-top.png
+01-siem\wazuh-detection-engineering\screenshots\05-suspicious-powershell\05-expanded-alert-bottom.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\01-nginx-access-log.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\02-custom-alert-results.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\03-sqli-expanded-alert.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\04-path-traversal-expanded-alert.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\05-test-commands.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\06-xss-expanded-alert.png
+01-siem\wazuh-detection-engineering\screenshots\06-web-attacks\07-path-traversal-expanded-alert-2.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\01-rule-syntax-check.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\02-wazuh-logtest-ssh.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\03-custom-rules-part-1.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\04-custom-rules-part-2.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\05-manager-restart.png
+01-siem\wazuh-detection-engineering\screenshots\07-rule-development\06-log-collector-confirmation.png
+01-siem\wazuh-detection-engineering\screenshots\evidence-index.md
+01-siem\wazuh-detection-engineering\validation-tests.md
+01-siem\wazuh-detection-engineering\wazuh-logtest-results.md
+01-siem\wazuh-log-onboarding
+01-siem\wazuh-log-onboarding\.gitignore
+01-siem\wazuh-log-onboarding\agent-deployment.md
+01-siem\wazuh-log-onboarding\architecture.md
+01-siem\wazuh-log-onboarding\data-sources.md
+01-siem\wazuh-log-onboarding\evidence-log.md
+01-siem\wazuh-log-onboarding\ip-plan.md
+01-siem\wazuh-log-onboarding\README.md
+01-siem\wazuh-log-onboarding\report.md
+01-siem\wazuh-log-onboarding\screenshots
+01-siem\wazuh-log-onboarding\screenshots\architecture
+01-siem\wazuh-log-onboarding\screenshots\architecture\01-windows-vm-resources.png
+01-siem\wazuh-log-onboarding\screenshots\architecture\02-ubuntu-vm-resources.png
+01-siem\wazuh-log-onboarding\screenshots\architecture\03-host-only-network.png
+01-siem\wazuh-log-onboarding\screenshots\evidence-index.md
+01-siem\wazuh-log-onboarding\screenshots\ubuntu
+01-siem\wazuh-log-onboarding\screenshots\ubuntu\04-ubuntu-hostname-ip-route.png
+01-siem\wazuh-log-onboarding\screenshots\ubuntu\35-ubuntu-auth-log.png
+01-siem\wazuh-log-onboarding\screenshots\ubuntu\41-nginx-access-log.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh
+01-siem\wazuh-log-onboarding\screenshots\wazuh\09-wazuh-manager-active.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\10-wazuh-indexer-active.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\11-wazuh-dashboard-active.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\12-filebeat-active.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\13-wazuh-listening-ports.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\14-dashboard-login.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\15-wazuh-version-api.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\17-windows-agent-active.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\28-wazuh-event4625-summary.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\29-wazuh-event4624-summary.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\30-wazuh-event4625-details.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\33-wazuh-event4624-details.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\37-wazuh-ssh-events-summary.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\38-wazuh-ssh-failed-events.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\39-wazuh-ssh-success-details.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\40-wazuh-ssh-failure-details.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\43-wazuh-sqli-alert-summary.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\44-wazuh-sqli-alert-details.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\45-wazuh-sysmon-event1-summary.png
+01-siem\wazuh-log-onboarding\screenshots\wazuh\46-wazuh-sysmon-event11-summary.png
+01-siem\wazuh-log-onboarding\screenshots\windows
+01-siem\wazuh-log-onboarding\screenshots\windows\05-windows-hostname-ipconfig.png
+01-siem\wazuh-log-onboarding\screenshots\windows\06-windows-ping-ubuntu.png
+01-siem\wazuh-log-onboarding\screenshots\windows\16-port-connectivity-443-1514-1515.png
+01-siem\wazuh-log-onboarding\screenshots\windows\18-wazuh-agent-service-running.png
+01-siem\wazuh-log-onboarding\screenshots\windows\19-sysmon-service-running.png
+01-siem\wazuh-log-onboarding\screenshots\windows\20-sysmon-recent-events.png
+01-siem\wazuh-log-onboarding\screenshots\windows\21-sysmon-event1-list.png
+01-siem\wazuh-log-onboarding\screenshots\windows\22-sysmon-event1-wmiprvse.png
+01-siem\wazuh-log-onboarding\screenshots\windows\23-sysmon-event1-edge-update-crop.png
+01-siem\wazuh-log-onboarding\screenshots\windows\24-sysmon-event1-details.png
+01-siem\wazuh-log-onboarding\screenshots\windows\25-sysmon-event1-curl.png
+01-siem\wazuh-log-onboarding\screenshots\windows\27-sysmon-event11-file-create.png
+01-siem\wazuh-log-onboarding\screenshots\windows\31-windows-event4625-local.png
+01-siem\wazuh-log-onboarding\screenshots\windows\32-windows-event4624-local.png
+01-siem\wazuh-log-onboarding\screenshots\windows\36-windows-ssh-test.png
+01-siem\wazuh-log-onboarding\screenshots\windows\42-windows-nginx-http-tests.png
+01-siem\wazuh-log-onboarding\setup.md
+01-siem\wazuh-log-onboarding\troubleshooting.md
+01-siem\wazuh-log-onboarding\validation-tests.md
+02-edr-endpoint-security
+02-edr-endpoint-security\limacharlie-edr-lab
+02-edr-endpoint-security\limacharlie-edr-lab\.gitignore
+02-edr-endpoint-security\limacharlie-edr-lab\detection-rules.yml
+02-edr-endpoint-security\limacharlie-edr-lab\detections
+02-edr-endpoint-security\limacharlie-edr-lab\detections\network-isolation-response.md
+02-edr-endpoint-security\limacharlie-edr-lab\detections\suspicious-powershell.md
+02-edr-endpoint-security\limacharlie-edr-lab\detections\windows-reconnaissance.md
+02-edr-endpoint-security\limacharlie-edr-lab\evidence-log.md
+02-edr-endpoint-security\limacharlie-edr-lab\incident-reports
+02-edr-endpoint-security\limacharlie-edr-lab\incident-reports\suspicious-powershell-incident.md
+02-edr-endpoint-security\limacharlie-edr-lab\incident-reports\windows-reconnaissance-incident.md
+02-edr-endpoint-security\limacharlie-edr-lab\README.md
+02-edr-endpoint-security\limacharlie-edr-lab\report.md
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\01-setup
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\01-setup\01-sensor-online.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\01-setup\02-service-running.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell\01-safe-test-command.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell\02-limacharlie-process-telemetry.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell\03-wazuh-powershell-hunt.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell\04-wazuh-encoded-alert.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\02-suspicious-powershell\05-benign-powershell-comparison.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\01-recon-rule.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\02-rule-unit-tests.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\03-detections-overview.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\04-detection-event-context.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\05-sysmon-ipconfig-process.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\06-sysmon-ipconfig-parent.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\07-sysmon-localgroup-process.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\08-sysmon-localgroup-parent.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\09-sysmon-whoami-process.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\03-reconnaissance\10-sysmon-whoami-parent.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\04-containment
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\04-containment\01-connectivity-before.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\04-containment\02-segregate-network-awaiting.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\04-containment\03-connectivity-blocked.png
+02-edr-endpoint-security\limacharlie-edr-lab\screenshots\evidence-index.md
+02-edr-endpoint-security\limacharlie-edr-lab\validation-tests.md
+02-edr-endpoint-security\README.md
+03-network-security
+03-network-security\firewall-ids-monitoring-lab
+03-network-security\firewall-ids-monitoring-lab\firewall
+03-network-security\firewall-ids-monitoring-lab\firewall\architecture.md
+03-network-security\firewall-ids-monitoring-lab\firewall\blocked-traffic-analysis.md
+03-network-security\firewall-ids-monitoring-lab\firewall\evidence-log.md
+03-network-security\firewall-ids-monitoring-lab\firewall\fortigate-policy-mapping.md
+03-network-security\firewall-ids-monitoring-lab\firewall\ip-plan.md
+03-network-security\firewall-ids-monitoring-lab\firewall\network-segmentation-policy.md
+03-network-security\firewall-ids-monitoring-lab\firewall\pfsense-rules.md
+03-network-security\firewall-ids-monitoring-lab\firewall\README.md
+03-network-security\firewall-ids-monitoring-lab\firewall\troubleshooting.md
+03-network-security\firewall-ids-monitoring-lab\firewall\validation-tests.md
+03-network-security\firewall-ids-monitoring-lab\ids
+03-network-security\firewall-ids-monitoring-lab\ids\custom-rules
+03-network-security\firewall-ids-monitoring-lab\ids\custom-rules\local.rules
+03-network-security\firewall-ids-monitoring-lab\ids\custom-rules\README.md
+03-network-security\firewall-ids-monitoring-lab\ids\custom-rules\rule-analysis.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\alerts.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\eve-json-analysis.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\evidence-log.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\README.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\setup.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\troubleshooting.md
+03-network-security\firewall-ids-monitoring-lab\ids\suricata\validation-tests.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports
+03-network-security\firewall-ids-monitoring-lab\incident-reports\blocked-lateral-movement
+03-network-security\firewall-ids-monitoring-lab\incident-reports\blocked-lateral-movement\evidence.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\blocked-lateral-movement\incident-report.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\blocked-lateral-movement\mitre-mapping.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\blocked-lateral-movement\timeline.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\metrics-anomaly
+03-network-security\firewall-ids-monitoring-lab\incident-reports\metrics-anomaly\incident-report.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\README.md
+03-network-security\firewall-ids-monitoring-lab\incident-reports\suricata-web-attack
+03-network-security\firewall-ids-monitoring-lab\incident-reports\suricata-web-attack\incident-report.md
+03-network-security\firewall-ids-monitoring-lab\monitoring
+03-network-security\firewall-ids-monitoring-lab\monitoring\dashboard.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\docker-compose.yml
+03-network-security\firewall-ids-monitoring-lab\monitoring\evidence-log.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\metrics-analysis.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\prometheus
+03-network-security\firewall-ids-monitoring-lab\monitoring\prometheus\alert-rules.yml
+03-network-security\firewall-ids-monitoring-lab\monitoring\prometheus\prometheus.yml
+03-network-security\firewall-ids-monitoring-lab\monitoring\promql-queries.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\README.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\setup.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\troubleshooting.md
+03-network-security\firewall-ids-monitoring-lab\monitoring\validation-tests.md
+03-network-security\firewall-ids-monitoring-lab\README.md
+03-network-security\firewall-ids-monitoring-lab\report.md
+03-network-security\firewall-ids-monitoring-lab\screenshots
+03-network-security\firewall-ids-monitoring-lab\screenshots\evidence-index.md
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\01-grafana-prometheus-datasource.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\02-grafana-datasource-query-success.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\03-stress-ng-cpu-test-command.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\04-top-cpu-load-evidence.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\05-stress-ng-all-cpu-test.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\06-grafana-cpu-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\07-grafana-memory-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\08-grafana-network-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\09-grafana-disk-io-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\10-grafana-filesystem-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\11-grafana-disk-utilization-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\grafana\12-grafana-pressure-dashboard.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\01-windows-test-client-system.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\02-user-net-ip-configuration.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\03-ubuntu-dmz-ip-route.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\04-pfsense-interface-assignments.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\05-pfsense-wan-user-status.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\06-pfsense-dmz-socadmin-status.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\07-dmz-web-server-alias.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\08-service-port-aliases.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\09-user-firewall-rules-initial.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\10-dmz-firewall-rules-initial.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\11-socadmin-firewall-rules-initial.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\12-user-http-curl-success.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\13-user-to-dmz-http-port80-passed.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\14-user-to-dmz-ssh-blocked.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\15-user-to-dmz-smb-blocked.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\16-user-to-dmz-rdp-blocked.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\17-pfsense-blocked-admin-port-logs.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\18-socadmin-to-dmz-ssh-passed.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\19-socadmin-firewall-rules-final.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\20-dmz-firewall-rules-final.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\21-user-firewall-rules-final.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\22-socadmin-to-grafana-passed.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\23-socadmin-to-prometheus-passed.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\24-user-to-grafana-blocked.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\25-user-to-prometheus-blocked.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\26-user-firewall-rules-final.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\27-pfsense-monitoring-access-logs.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\pfsense\28-pfsense-final-firewall-logs.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\01-docker-compose-services-up.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\02-prometheus-config-validation.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\03-prometheus-alert-rules-validation.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\04-node-exporter-metrics-endpoint.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\05-prometheus-health-grafana-login.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\06-node-metric-query-cli.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\07-prometheus-targets-up.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\08-prometheus-alert-rules-page.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\09-prometheus-targets-final-up.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\10-host-container-time-alignment.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\11-cpu-query-api-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\12-cpu-promql-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\13-memory-promql-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\14-disk-promql-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\15-network-rx-promql-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\16-network-tx-promql-result.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\prometheus\17-alert-rules-returned-to-normal.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 152638.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 152824.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 154153.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 154330.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 154728.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 154740.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 155348.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 155400.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 163155.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 163209.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 163450.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 212934.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 212946.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 213138.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 213248.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 213318.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 213546.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-20 220707.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 205448.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 205500.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 205919.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 210407.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 210632.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 210754.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 210851.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 215658.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 224102.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-21 231916.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 102342.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 104450.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 104501.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 104856.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 105247.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 105401.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 160326.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 161905.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 162435.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 162515.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 230718.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 230742.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 231950.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 232049.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 234500.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-22 234511.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 095539.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 101018.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 113001.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 152230.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 153808.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 154511.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 154632.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 154836.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161500.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161510.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161539.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161557.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161608.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161615.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161623.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161632.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 161856.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 171420.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 171429.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 171439.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 172802.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 173017.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 201156.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 201203.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 202322.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 202338.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\raw-evidence\Screenshot 2026-07-23 202359.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\README.md
+03-network-security\firewall-ids-monitoring-lab\screenshots\source-evidence-manifest.csv
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\01-suricata-version-and-features.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\02-suricata-initial-interface-error.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\03-ubuntu-interface-verification.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\04-suricata-home-net-configuration.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\05-suricata-af-packet-configuration.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\06-suricata-config-validation.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\07-suricata-service-active.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\08-safe-web-attack-test-requests.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\09-suricata-fast-log-alerts.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\10-suricata-eve-json-alert-analysis.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\11-local-rules-editor.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\12-local-rules-final.png
+03-network-security\firewall-ids-monitoring-lab\screenshots\suricata\13-nginx-access-log-test-traffic.png
+03-network-security\firewall-ids-monitoring-lab\scripts
+03-network-security\firewall-ids-monitoring-lab\scripts\monitoring
+03-network-security\firewall-ids-monitoring-lab\scripts\monitoring\alert-rules.yml
+03-network-security\firewall-ids-monitoring-lab\scripts\monitoring\docker-compose.yml
+03-network-security\firewall-ids-monitoring-lab\scripts\monitoring\prometheus.yml
+03-network-security\firewall-ids-monitoring-lab\scripts\README.md
+03-network-security\firewall-ids-monitoring-lab\scripts\sample-log-generators
+03-network-security\firewall-ids-monitoring-lab\scripts\sample-log-generators\generate-cpu-load.sh
+03-network-security\firewall-ids-monitoring-lab\scripts\sample-log-generators\generate-web-attack-requests.ps1
+03-network-security\firewall-ids-monitoring-lab\scripts\sample-log-generators\test-firewall-policy.ps1
+03-network-security\firewall-ids-monitoring-lab\scripts\suricata-rules
+03-network-security\firewall-ids-monitoring-lab\scripts\suricata-rules\local.rules
+03-network-security\firewall-ids-monitoring-lab\validation-summary.md
+03-network-security\README.md
+docs
+README.md

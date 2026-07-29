@@ -1,0 +1,8 @@
+# Existing web-pattern rules retained from the foundation IDS lab.
+alert http any any -> $HOME_NET any (msg:"LOCAL Possible SQL Injection Attempt"; flow:to_server,established; http.uri; content:"union"; nocase; content:"select"; nocase; sid:1000001; rev:1;)
+alert http any any -> $HOME_NET any (msg:"LOCAL Possible XSS Script Tag"; flow:to_server,established; http.uri; content:"<script"; nocase; sid:1000002; rev:1;)
+
+# Phase 1 reconnaissance rules.
+alert tcp 192.168.10.0/24 any -> 192.168.20.10 any (msg:"LOCAL P2 TCP SYN Scan"; flags:S; flow:stateless; detection_filter:track by_src, count 5, seconds 60; classtype:network-scan; sid:1000003; rev:2;)
+alert icmp 192.168.10.0/24 any -> 192.168.20.0/24 any (msg:"LOCAL P2 ICMP host discovery sweep"; itype:8; detection_filter:track by_src, count 5, seconds 10; classtype:network-scan; sid:1000004; rev:1;)
+alert http 192.168.10.0/24 any -> 192.168.20.10 any (msg:"LOCAL P2 HTTP enumeration burst"; flow:established,to_server; http.method; content:"GET"; detection_filter:track by_src, count 8, seconds 20; classtype:web-application-activity; sid:1000006; rev:1;)

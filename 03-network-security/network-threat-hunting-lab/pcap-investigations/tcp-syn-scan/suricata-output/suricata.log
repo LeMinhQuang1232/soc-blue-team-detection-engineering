@@ -1,0 +1,18 @@
+[4864 - Suricata-Main] 2026-07-28 23:09:53 Notice: suricata: This is Suricata version 8.0.6 RELEASE running in USER mode
+[4864 - Suricata-Main] 2026-07-28 23:09:53 Info: cpu: CPUs/cores online: 10
+[4864 - Suricata-Main] 2026-07-28 23:09:53 Info: suricata: Setting engine mode to IDS mode by default
+[4864 - Suricata-Main] 2026-07-28 23:09:53 Info: exception-policy: master exception-policy set to: auto
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: suricata: Preparing unexpected signal handling
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: logopenfile: fast output device (regular) initialized: fast.log
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: logopenfile: stats output device (regular) initialized: stats.log
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: detect: 1 rule files processed. 3 rules successfully loaded, 0 rules failed, 0 rules skipped
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[4864 - Suricata-Main] 2026-07-28 23:09:54 Info: detect: 3 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 1 inspect application layer, 0 are decoder event only
+[4865 - RX#01] 2026-07-28 23:09:55 Info: pcap: Starting file run for /home/quang-le/P2-network-visibility/pcap-investigations/tcp-syn-scan/capture.pcap
+[4864 - Suricata-Main] 2026-07-28 23:09:55 Notice: threads: Threads created -> RX: 1 W: 10 FM: 1 FR: 1   Engine started.
+[4865 - RX#01] 2026-07-28 23:09:55 Info: pcap: pcap file /home/quang-le/P2-network-visibility/pcap-investigations/tcp-syn-scan/capture.pcap end of file reached (pcap err code 0)
+[4864 - Suricata-Main] 2026-07-28 23:09:55 Notice: suricata: Signal Received.  Stopping engine.
+[4864 - Suricata-Main] 2026-07-28 23:09:56 Info: suricata: time elapsed 1.650s
+[4865 - RX#01] 2026-07-28 23:09:56 Notice: pcap: read 1 file, 200 packets, 12000 bytes
+[4864 - Suricata-Main] 2026-07-28 23:09:56 Info: counters: Alerts: 195

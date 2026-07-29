@@ -1,0 +1,31 @@
+window_seconds: 30
+minimum_alert_score: 30
+
+thresholds:
+  unique_ports_medium: 10
+  unique_ports_high: 25
+  unique_hosts: 5
+  failed_connections: 10
+  admin_port_attempts: 3
+  unique_http_uris: 8
+
+admin_ports:
+  - 22
+  - 445
+  - 3389
+
+failed_connection_states:
+  - S0
+  - REJ
+  - RSTO
+  - RSTR
+  - SH
+  - SHR
+
+risk_weights:
+  unique_ports_medium: 20
+  unique_ports_high: 30
+  unique_hosts: 25
+  failed_connections: 20
+  admin_service_probing: 15
+  http_enumeration: 20

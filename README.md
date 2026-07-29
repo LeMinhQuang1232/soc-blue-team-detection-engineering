@@ -41,6 +41,7 @@ flowchart LR
 | Wazuh Detection Engineering | Custom detections, validation, and alert investigation | [Project README](01-siem/wazuh-detection-engineering/README.md) · [Report](01-siem/wazuh-detection-engineering/report.md) | [Screenshot evidence](01-siem/wazuh-detection-engineering/screenshots/evidence-index.md) |
 | LimaCharlie EDR | Endpoint telemetry, detection, investigation, and isolation | [Project README](02-edr-endpoint-security/limacharlie-edr-lab/README.md) · [Report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) | [Screenshot evidence](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/evidence-index.md) |
 | Firewall, IDS, and Monitoring | pfSense segmentation, Suricata IDS, Prometheus, and Grafana | [Project README](03-network-security/firewall-ids-monitoring-lab/README.md) · [Report](03-network-security/firewall-ids-monitoring-lab/report.md) | [Screenshot evidence](03-network-security/firewall-ids-monitoring-lab/screenshots/evidence-index.md) |
+| Network Threat Hunting | PCAP, Wireshark, Zeek, Suricata, Python scoring, and Wazuh correlation | [Project README](03-network-security/network-threat-hunting-lab/README.md) · [Report](03-network-security/network-threat-hunting-lab/report.md) | [Screenshot evidence](03-network-security/network-threat-hunting-lab/screenshots/evidence-index.md) |
 
 ## Key Outcomes
 
@@ -50,7 +51,8 @@ flowchart LR
 | Detection engineering | Developed and validated detections for brute force, suspicious PowerShell, web attacks, and reconnaissance |
 | Endpoint response | Investigated LimaCharlie telemetry and tested endpoint network isolation and recovery |
 | Network security | Enforced USER, DMZ, and SOC_ADMIN segmentation using pfSense |
-| Network detection | Created Suricata rules for SQL injection, XSS, and TCP SYN scan activity |
+| Network detection | Created Suricata rules for SQL injection, XSS, ICMP discovery, HTTP path probing, and TCP SYN scan activity |
+| Network threat hunting | Correlated PCAP, Wireshark, Zeek, Suricata, Python risk scoring, and Wazuh alerts |
 | Monitoring | Collected Linux host metrics using Prometheus and visualized them in Grafana |
 | Troubleshooting | Diagnosed host firewall, interface selection, service health, DNS, and monitoring data-source issues |
 | Reporting | Produced evidence logs, validation records, troubleshooting notes, and incident reports |
@@ -69,15 +71,20 @@ soc-blue-team-detection-engineering/
 │   └── limacharlie-edr-lab/
 └── 03-network-security/
     ├── README.md
-    └── firewall-ids-monitoring-lab/
+    ├── firewall-ids-monitoring-lab/
+    │   ├── README.md
+    │   ├── report.md
+    │   └── ...
+    └── network-threat-hunting-lab/
         ├── README.md
         ├── report.md
-        ├── validation-summary.md
-        ├── firewall/
-        ├── ids/
-        ├── monitoring/
+        ├── pcap-investigations/
+        ├── zeek/
+        ├── suricata/
+        ├── python-detector/
+        ├── wazuh-integration/
+        ├── detections/
         ├── incident-reports/
-        ├── scripts/
         └── screenshots/
 ```
 
@@ -91,7 +98,8 @@ soc-blue-team-detection-engineering/
 | Alert triage and incident reporting | Evidence tables, analyst conclusions, timelines, impact, containment, remediation, and lessons learned |
 | Endpoint detection and response | LimaCharlie sensor deployment, process context, reconnaissance detections, SIEM correlation, and network isolation testing |
 | Firewall policy and segmentation | pfSense zones, aliases, least-privilege allow/deny rules, logging, and role-based administration |
-| Network intrusion detection | Suricata configuration, `fast.log`, `eve.json`, and custom SQLi/XSS/SYN signatures |
+| Network intrusion detection | Suricata configuration, `fast.log`, `eve.json`, and custom SQLi/XSS/ICMP/HTTP/SYN signatures |
+| Network behavior analytics | Zeek JSON logs, PCAP investigation, Python time-window aggregation, configurable scoring, and Wazuh JSON integration |
 | Monitoring and observability | Prometheus, node_exporter, Grafana, PromQL, host metrics, and controlled load validation |
 | Troubleshooting methodology | Packet capture, service status, firewall-layer isolation, DNS/egress recovery, interface correction, and config validation |
 | MITRE ATT&CK mapping | T1110, T1059.001, T1046, T1021, T1190, and related behavior-based analysis |
@@ -121,6 +129,12 @@ The network-security project built three pfSense zones, enforced least-privilege
 
 **Project links:** [Project README](03-network-security/firewall-ids-monitoring-lab/) · [Full report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Firewall](03-network-security/firewall-ids-monitoring-lab/firewall/) · [Suricata IDS](03-network-security/firewall-ids-monitoring-lab/ids/suricata/) · [Custom rules](03-network-security/firewall-ids-monitoring-lab/ids/custom-rules/) · [Monitoring](03-network-security/firewall-ids-monitoring-lab/monitoring/) · [Incident reports](03-network-security/firewall-ids-monitoring-lab/incident-reports/) · [Screenshots](03-network-security/firewall-ids-monitoring-lab/screenshots/)
 
+## Project 5 — Zeek-Suricata Network Threat Hunting
+
+Phase 1 extends the segmented network lab with five reproducible PCAP datasets, Wireshark packet validation, Zeek JSON metadata, Suricata reconnaissance signatures, a configurable Python detector, and Wazuh ingestion. The final TCP SYN scenario demonstrates one activity through all six evidence layers and includes threshold tuning and false-positive analysis.
+
+**Project links:** [Project README](03-network-security/network-threat-hunting-lab/) · [Technical report](03-network-security/network-threat-hunting-lab/report.md) · [PCAP investigations](03-network-security/network-threat-hunting-lab/pcap-investigations/) · [Python detector](03-network-security/network-threat-hunting-lab/python-detector/) · [Wazuh integration](03-network-security/network-threat-hunting-lab/wazuh-integration/) · [Incident report](03-network-security/network-threat-hunting-lab/incident-reports/network-reconnaissance-report.md) · [Screenshots](03-network-security/network-threat-hunting-lab/screenshots/)
+
 ## Portfolio Highlights
 
 - Built an evidence-backed SOC portfolio spanning SIEM, EDR, firewall segmentation, IDS, metrics monitoring, and incident reporting.
@@ -146,7 +160,8 @@ Across the completed projects, the portfolio follows a practical defensive workf
 
 - Suricata has been validated in IDS mode, not inline IPS mode.
 - Some LimaCharlie response-recovery and monitoring-alert delivery evidence remains partial.
-- The next portfolio improvement is a complete Splunk ingestion, SPL investigation, and dashboard project using the existing Windows, Sysmon, Linux, Nginx, firewall, and Suricata data sources.
+- Phase 1 network threat hunting is complete; the next roadmap stage can reuse these datasets and detections for safe adversary emulation and purple-team validation.
+- A complete Splunk ingestion and SPL investigation remains a separate future improvement.
 
 ## Evidence Policy
 

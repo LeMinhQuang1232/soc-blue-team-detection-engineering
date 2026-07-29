@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Network Reconnaissance Alert",
+  "type": "object",
+  "required": [
+    "event_type",
+    "source_ip",
+    "window_start",
+    "window_end",
+    "unique_destination_ports",
+    "unique_destination_hosts",
+    "failed_connections",
+    "admin_service_attempts",
+    "unique_http_uris",
+    "time_window_seconds",
+    "risk_score",
+    "risk_level",
+    "classification",
+    "signals",
+    "evidence_source"
+  ],
+  "properties": {
+    "event_type": {
+      "const": "network_reconnaissance"
+    },
+    "source_ip": {
+      "type": "string"
+    },
+    "window_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "window_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "unique_destination_ports": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unique_destination_hosts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "failed_connections": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "admin_service_attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unique_http_uris": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "time_window_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "risk_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "risk_level": {
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "baseline_or_low_activity",
+        "probable_http_enumeration",
+        "probable_host_discovery",
+        "probable_port_scan",
+        "probable_admin_service_probing",
+        "probable_failed_connection_burst"
+      ]
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "evidence_source": {
+      "enum": [
+        "zeek_conn_log",
+        "zeek_http_log",
+        "zeek_conn_and_http_logs"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
