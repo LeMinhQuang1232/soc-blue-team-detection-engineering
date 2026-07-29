@@ -1,4 +1,4 @@
-# Phase 1 Completion Checklist
+# Completion Checklist
 
 | Requirement | Evidence | Status |
 |---|---|---|
