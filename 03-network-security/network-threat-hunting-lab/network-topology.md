@@ -3,18 +3,18 @@
 ```text
                          Internet / NAT
                                |
-                         pfSense WAN
+                           pfSense WAN
                                |
              +-----------------+-----------------+
              |                 |                 |
-          USER_NET           DMZ_NET          SOC_ADMIN
-       192.168.10.0/24    192.168.20.0/24   192.168.30.0/24
+          USER_NET          DMZ_NET          SOC_ADMIN
+       192.168.10.0/24   192.168.20.0/24   192.168.30.0/24
              |                 |                 |
  Windows USER endpoint    Ubuntu DMZ       Admin test role
-   192.168.10.10        192.168.20.10      192.168.30.10
+     192.168.10.10       192.168.20.10      192.168.30.10
                                |
-                  Nginx / Zeek / Suricata
-                  Python detector / Wazuh
+                     Nginx / Zeek / Suricata
+                     Python detector / Wazuh
 ```
 
 ## Gateways
