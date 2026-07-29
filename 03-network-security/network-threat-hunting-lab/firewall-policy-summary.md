@@ -16,7 +16,7 @@
 - Log relevant pass/block decisions for validation.
 - Keep monitoring services restricted from ordinary USER access in the final network lab design.
 
-## Phase 1 Use
+## Role of pfSense Evidence
 
 pfSense evidence was used to confirm packet path and policy context. The detector did not treat a firewall block by itself as proof of malicious intent; it was correlated with packet and Zeek behavior.
 
