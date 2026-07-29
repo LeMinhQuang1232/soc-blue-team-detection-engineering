@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This project added behavioral network-threat-hunting capability to an existing segmented SOC lab. The previous network project already provided pfSense policy enforcement, an Ubuntu DMZ server, Nginx, Suricata, and Wazuh. Phase 1 extended that environment with Zeek JSON logs, controlled PCAP datasets, Wireshark validation, a Python aggregation and scoring engine, and Wazuh ingestion of structured reconnaissance alerts.
+This project added behavioral network-threat-hunting capability to an existing segmented SOC lab. The previous network project already provided pfSense policy enforcement, an Ubuntu DMZ server, Nginx, Suricata, and Wazuh. This will extended that environment with Zeek JSON logs, controlled PCAP datasets, Wireshark validation, a Python aggregation and scoring engine, and Wazuh ingestion of structured reconnaissance alerts.
 
 Five datasets were analyzed: normal web traffic, ICMP host discovery, administrative-service probing, HTTP path probing, and a TCP SYN scan. The strongest validation was the final SYN-scan dataset. A single source, `192.168.10.10`, generated 200 captured SYN packets against `192.168.20.10`, targeting 100 unique destination ports. Zeek produced 200 `S0` connection records, Suricata generated 195 alerts for local SID `1000003` revision `2`, the Python detector produced a Medium-risk `probable_port_scan` event with score `50`, and Wazuh matched rule `100201` at level `7`.
 
@@ -67,7 +67,7 @@ tcpdump PCAP
                     ↓
               JSON alert file
                     ↓
-                 Wazuh
+                  Wazuh
 ```
 
 ## 4. Data Sources
@@ -366,4 +366,4 @@ Full command-level details are in [`troubleshooting.md`](troubleshooting.md).
 
 ## 15. Final Assessment
 
-Phase 1 met its definition of done. The repository contains more than three reconnaissance scenarios, baseline and reconnaissance PCAPs, Zeek and Suricata outputs, Wireshark evidence, a configurable Python detector, Wazuh integration, tuning analysis, false-positive analysis, and a full incident report. The final TCP SYN activity can be independently traced through all required layers.
+The repository contains more than three reconnaissance scenarios, baseline and reconnaissance PCAPs, Zeek and Suricata outputs, Wireshark evidence, a configurable Python detector, Wazuh integration, tuning analysis, false-positive analysis, and a full incident report. The final TCP SYN activity can be independently traced through all required layers.
