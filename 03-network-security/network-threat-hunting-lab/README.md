@@ -121,8 +121,8 @@ All traffic was generated inside an isolated VirtualBox lab against systems owne
 - The final SYN PCAP contains TCP control packets only; Zeek correctly warns that the trace appears pre-filtered.
 - HTTP PCAP analysis contains checksum-offload noise; custom-signature filtering is required.
 - The tuning profile increases sensitivity but can raise the final SYN scan from Medium to Critical.
-- Wazuh alerting was validated; automatic containment was intentionally not implemented in this phase.
+- Wazuh alerting was validated; automatic containment was intentionally not implemented in this case.
 
 ## Status
 
-**Phase 1 completed.** The final TCP SYN scenario has evidence across PCAP, Wireshark, Zeek, Suricata, Python, and Wazuh. The project is ready to support later safe adversary-emulation and purple-team validation work.
+**Task completed.** The final TCP SYN scenario has evidence across PCAP, Wireshark, Zeek, Suricata, Python, and Wazuh. 
