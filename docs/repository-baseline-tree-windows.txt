@@ -1,0 +1,440 @@
+﻿Folder PATH listing for volume OS
+Volume serial number is 00000025 303A:0C78
+C:.
+|   README.md
+|   
++---01-siem
+|   |   README.md
+|   |   
+|   +---wazuh-detection-engineering
+|   |   |   .gitignore
+|   |   |   custom-rules.xml
+|   |   |   evidence-log.md
+|   |   |   README.md
+|   |   |   report.md
+|   |   |   validation-tests.md
+|   |   |   wazuh-logtest-results.md
+|   |   |   
+|   |   +---detections
+|   |   |       ssh-bruteforce.md
+|   |   |       successful-login-after-failures.md
+|   |   |       suspicious-powershell.md
+|   |   |       web-sqli-xss.md
+|   |   |       windows-failed-logons.md
+|   |   |       
+|   |   +---incident-reports
+|   |   |       ssh-bruteforce-incident.md
+|   |   |       suspicious-powershell-incident.md
+|   |   |       web-attack-incident.md
+|   |   |       
+|   |   \---screenshots
+|   |       |   evidence-index.md
+|   |       |   
+|   |       +---01-setup
+|   |       |       01-wazuh-services-and-version.png
+|   |       |       02-agent-control-active.png
+|   |       |       03-agent-dashboard-active.png
+|   |       |       04-built-in-rule-assessment.png
+|   |       |       05-baseline-auth-and-nginx-logs.png
+|   |       |       
+|   |       +---02-ssh-bruteforce
+|   |       |       01-source-log.png
+|   |       |       02-wazuh-results.png
+|   |       |       03-custom-alert-results.png
+|   |       |       04-expanded-alert.png
+|   |       |       
+|   |       +---03-windows-failed-logons
+|   |       |       01-event-viewer-4625.png
+|   |       |       02-event-viewer-network-details.png
+|   |       |       03-wazuh-results.png
+|   |       |       04-custom-alert-results.png
+|   |       |       05-expanded-alert-top.png
+|   |       |       06-expanded-alert-bottom.png
+|   |       |       
+|   |       +---04-success-after-failures
+|   |       |       01-successful-logon-top.png
+|   |       |       02-successful-logon-bottom.png
+|   |       |       03-4625-to-4624-timeline.png
+|   |       |       
+|   |       +---05-suspicious-powershell
+|   |       |       01-event-viewer-process-create.png
+|   |       |       02-event-viewer-process-details.png
+|   |       |       03-custom-alert-results.png
+|   |       |       04-expanded-alert-top.png
+|   |       |       05-expanded-alert-bottom.png
+|   |       |       
+|   |       +---06-web-attacks
+|   |       |       01-nginx-access-log.png
+|   |       |       02-custom-alert-results.png
+|   |       |       03-sqli-expanded-alert.png
+|   |       |       04-path-traversal-expanded-alert.png
+|   |       |       05-test-commands.png
+|   |       |       06-xss-expanded-alert.png
+|   |       |       07-path-traversal-expanded-alert-2.png
+|   |       |       
+|   |       \---07-rule-development
+|   |               01-rule-syntax-check.png
+|   |               02-wazuh-logtest-ssh.png
+|   |               03-custom-rules-part-1.png
+|   |               04-custom-rules-part-2.png
+|   |               05-manager-restart.png
+|   |               06-log-collector-confirmation.png
+|   |               
+|   \---wazuh-log-onboarding
+|       |   .gitignore
+|       |   agent-deployment.md
+|       |   architecture.md
+|       |   data-sources.md
+|       |   evidence-log.md
+|       |   ip-plan.md
+|       |   README.md
+|       |   report.md
+|       |   setup.md
+|       |   troubleshooting.md
+|       |   validation-tests.md
+|       |   
+|       \---screenshots
+|           |   evidence-index.md
+|           |   
+|           +---architecture
+|           |       01-windows-vm-resources.png
+|           |       02-ubuntu-vm-resources.png
+|           |       03-host-only-network.png
+|           |       
+|           +---ubuntu
+|           |       04-ubuntu-hostname-ip-route.png
+|           |       35-ubuntu-auth-log.png
+|           |       41-nginx-access-log.png
+|           |       
+|           +---wazuh
+|           |       09-wazuh-manager-active.png
+|           |       10-wazuh-indexer-active.png
+|           |       11-wazuh-dashboard-active.png
+|           |       12-filebeat-active.png
+|           |       13-wazuh-listening-ports.png
+|           |       14-dashboard-login.png
+|           |       15-wazuh-version-api.png
+|           |       17-windows-agent-active.png
+|           |       28-wazuh-event4625-summary.png
+|           |       29-wazuh-event4624-summary.png
+|           |       30-wazuh-event4625-details.png
+|           |       33-wazuh-event4624-details.png
+|           |       37-wazuh-ssh-events-summary.png
+|           |       38-wazuh-ssh-failed-events.png
+|           |       39-wazuh-ssh-success-details.png
+|           |       40-wazuh-ssh-failure-details.png
+|           |       43-wazuh-sqli-alert-summary.png
+|           |       44-wazuh-sqli-alert-details.png
+|           |       45-wazuh-sysmon-event1-summary.png
+|           |       46-wazuh-sysmon-event11-summary.png
+|           |       
+|           \---windows
+|                   05-windows-hostname-ipconfig.png
+|                   06-windows-ping-ubuntu.png
+|                   16-port-connectivity-443-1514-1515.png
+|                   18-wazuh-agent-service-running.png
+|                   19-sysmon-service-running.png
+|                   20-sysmon-recent-events.png
+|                   21-sysmon-event1-list.png
+|                   22-sysmon-event1-wmiprvse.png
+|                   23-sysmon-event1-edge-update-crop.png
+|                   24-sysmon-event1-details.png
+|                   25-sysmon-event1-curl.png
+|                   27-sysmon-event11-file-create.png
+|                   31-windows-event4625-local.png
+|                   32-windows-event4624-local.png
+|                   36-windows-ssh-test.png
+|                   42-windows-nginx-http-tests.png
+|                   
++---02-edr-endpoint-security
+|   |   README.md
+|   |   
+|   \---limacharlie-edr-lab
+|       |   .gitignore
+|       |   detection-rules.yml
+|       |   evidence-log.md
+|       |   README.md
+|       |   report.md
+|       |   validation-tests.md
+|       |   
+|       +---detections
+|       |       network-isolation-response.md
+|       |       suspicious-powershell.md
+|       |       windows-reconnaissance.md
+|       |       
+|       +---incident-reports
+|       |       suspicious-powershell-incident.md
+|       |       windows-reconnaissance-incident.md
+|       |       
+|       \---screenshots
+|           |   evidence-index.md
+|           |   
+|           +---01-setup
+|           |       01-sensor-online.png
+|           |       02-service-running.png
+|           |       
+|           +---02-suspicious-powershell
+|           |       01-safe-test-command.png
+|           |       02-limacharlie-process-telemetry.png
+|           |       03-wazuh-powershell-hunt.png
+|           |       04-wazuh-encoded-alert.png
+|           |       05-benign-powershell-comparison.png
+|           |       
+|           +---03-reconnaissance
+|           |       01-recon-rule.png
+|           |       02-rule-unit-tests.png
+|           |       03-detections-overview.png
+|           |       04-detection-event-context.png
+|           |       05-sysmon-ipconfig-process.png
+|           |       06-sysmon-ipconfig-parent.png
+|           |       07-sysmon-localgroup-process.png
+|           |       08-sysmon-localgroup-parent.png
+|           |       09-sysmon-whoami-process.png
+|           |       10-sysmon-whoami-parent.png
+|           |       
+|           \---04-containment
+|                   01-connectivity-before.png
+|                   02-segregate-network-awaiting.png
+|                   03-connectivity-blocked.png
+|                   
++---03-network-security
+|   |   README.md
+|   |   
+|   \---firewall-ids-monitoring-lab
+|       |   README.md
+|       |   report.md
+|       |   validation-summary.md
+|       |   
+|       +---firewall
+|       |       architecture.md
+|       |       blocked-traffic-analysis.md
+|       |       evidence-log.md
+|       |       fortigate-policy-mapping.md
+|       |       ip-plan.md
+|       |       network-segmentation-policy.md
+|       |       pfsense-rules.md
+|       |       README.md
+|       |       troubleshooting.md
+|       |       validation-tests.md
+|       |       
+|       +---ids
+|       |   +---custom-rules
+|       |   |       local.rules
+|       |   |       README.md
+|       |   |       rule-analysis.md
+|       |   |       
+|       |   \---suricata
+|       |           alerts.md
+|       |           eve-json-analysis.md
+|       |           evidence-log.md
+|       |           README.md
+|       |           setup.md
+|       |           troubleshooting.md
+|       |           validation-tests.md
+|       |           
+|       +---incident-reports
+|       |   |   README.md
+|       |   |   
+|       |   +---blocked-lateral-movement
+|       |   |       evidence.md
+|       |   |       incident-report.md
+|       |   |       mitre-mapping.md
+|       |   |       timeline.md
+|       |   |       
+|       |   +---metrics-anomaly
+|       |   |       incident-report.md
+|       |   |       
+|       |   \---suricata-web-attack
+|       |           incident-report.md
+|       |           
+|       +---monitoring
+|       |   |   dashboard.md
+|       |   |   docker-compose.yml
+|       |   |   evidence-log.md
+|       |   |   metrics-analysis.md
+|       |   |   promql-queries.md
+|       |   |   README.md
+|       |   |   setup.md
+|       |   |   troubleshooting.md
+|       |   |   validation-tests.md
+|       |   |   
+|       |   \---prometheus
+|       |           alert-rules.yml
+|       |           prometheus.yml
+|       |           
+|       +---screenshots
+|       |   |   evidence-index.md
+|       |   |   README.md
+|       |   |   source-evidence-manifest.csv
+|       |   |   
+|       |   +---grafana
+|       |   |       01-grafana-prometheus-datasource.png
+|       |   |       02-grafana-datasource-query-success.png
+|       |   |       03-stress-ng-cpu-test-command.png
+|       |   |       04-top-cpu-load-evidence.png
+|       |   |       05-stress-ng-all-cpu-test.png
+|       |   |       06-grafana-cpu-dashboard.png
+|       |   |       07-grafana-memory-dashboard.png
+|       |   |       08-grafana-network-dashboard.png
+|       |   |       09-grafana-disk-io-dashboard.png
+|       |   |       10-grafana-filesystem-dashboard.png
+|       |   |       11-grafana-disk-utilization-dashboard.png
+|       |   |       12-grafana-pressure-dashboard.png
+|       |   |       
+|       |   +---pfsense
+|       |   |       01-windows-test-client-system.png
+|       |   |       02-user-net-ip-configuration.png
+|       |   |       03-ubuntu-dmz-ip-route.png
+|       |   |       04-pfsense-interface-assignments.png
+|       |   |       05-pfsense-wan-user-status.png
+|       |   |       06-pfsense-dmz-socadmin-status.png
+|       |   |       07-dmz-web-server-alias.png
+|       |   |       08-service-port-aliases.png
+|       |   |       09-user-firewall-rules-initial.png
+|       |   |       10-dmz-firewall-rules-initial.png
+|       |   |       11-socadmin-firewall-rules-initial.png
+|       |   |       12-user-http-curl-success.png
+|       |   |       13-user-to-dmz-http-port80-passed.png
+|       |   |       14-user-to-dmz-ssh-blocked.png
+|       |   |       15-user-to-dmz-smb-blocked.png
+|       |   |       16-user-to-dmz-rdp-blocked.png
+|       |   |       17-pfsense-blocked-admin-port-logs.png
+|       |   |       18-socadmin-to-dmz-ssh-passed.png
+|       |   |       19-socadmin-firewall-rules-final.png
+|       |   |       20-dmz-firewall-rules-final.png
+|       |   |       21-user-firewall-rules-final.png
+|       |   |       22-socadmin-to-grafana-passed.png
+|       |   |       23-socadmin-to-prometheus-passed.png
+|       |   |       24-user-to-grafana-blocked.png
+|       |   |       25-user-to-prometheus-blocked.png
+|       |   |       26-user-firewall-rules-final.png
+|       |   |       27-pfsense-monitoring-access-logs.png
+|       |   |       28-pfsense-final-firewall-logs.png
+|       |   |       
+|       |   +---prometheus
+|       |   |       01-docker-compose-services-up.png
+|       |   |       02-prometheus-config-validation.png
+|       |   |       03-prometheus-alert-rules-validation.png
+|       |   |       04-node-exporter-metrics-endpoint.png
+|       |   |       05-prometheus-health-grafana-login.png
+|       |   |       06-node-metric-query-cli.png
+|       |   |       07-prometheus-targets-up.png
+|       |   |       08-prometheus-alert-rules-page.png
+|       |   |       09-prometheus-targets-final-up.png
+|       |   |       10-host-container-time-alignment.png
+|       |   |       11-cpu-query-api-result.png
+|       |   |       12-cpu-promql-result.png
+|       |   |       13-memory-promql-result.png
+|       |   |       14-disk-promql-result.png
+|       |   |       15-network-rx-promql-result.png
+|       |   |       16-network-tx-promql-result.png
+|       |   |       17-alert-rules-returned-to-normal.png
+|       |   |       
+|       |   +---raw-evidence
+|       |   |       Screenshot 2026-07-20 152638.png
+|       |   |       Screenshot 2026-07-20 152824.png
+|       |   |       Screenshot 2026-07-20 154153.png
+|       |   |       Screenshot 2026-07-20 154330.png
+|       |   |       Screenshot 2026-07-20 154728.png
+|       |   |       Screenshot 2026-07-20 154740.png
+|       |   |       Screenshot 2026-07-20 155348.png
+|       |   |       Screenshot 2026-07-20 155400.png
+|       |   |       Screenshot 2026-07-20 163155.png
+|       |   |       Screenshot 2026-07-20 163209.png
+|       |   |       Screenshot 2026-07-20 163450.png
+|       |   |       Screenshot 2026-07-20 212934.png
+|       |   |       Screenshot 2026-07-20 212946.png
+|       |   |       Screenshot 2026-07-20 213138.png
+|       |   |       Screenshot 2026-07-20 213248.png
+|       |   |       Screenshot 2026-07-20 213318.png
+|       |   |       Screenshot 2026-07-20 213546.png
+|       |   |       Screenshot 2026-07-20 220707.png
+|       |   |       Screenshot 2026-07-21 205448.png
+|       |   |       Screenshot 2026-07-21 205500.png
+|       |   |       Screenshot 2026-07-21 205919.png
+|       |   |       Screenshot 2026-07-21 210407.png
+|       |   |       Screenshot 2026-07-21 210632.png
+|       |   |       Screenshot 2026-07-21 210754.png
+|       |   |       Screenshot 2026-07-21 210851.png
+|       |   |       Screenshot 2026-07-21 215658.png
+|       |   |       Screenshot 2026-07-21 224102.png
+|       |   |       Screenshot 2026-07-21 231916.png
+|       |   |       Screenshot 2026-07-22 102342.png
+|       |   |       Screenshot 2026-07-22 104450.png
+|       |   |       Screenshot 2026-07-22 104501.png
+|       |   |       Screenshot 2026-07-22 104856.png
+|       |   |       Screenshot 2026-07-22 105247.png
+|       |   |       Screenshot 2026-07-22 105401.png
+|       |   |       Screenshot 2026-07-22 160326.png
+|       |   |       Screenshot 2026-07-22 161905.png
+|       |   |       Screenshot 2026-07-22 162435.png
+|       |   |       Screenshot 2026-07-22 162515.png
+|       |   |       Screenshot 2026-07-22 230718.png
+|       |   |       Screenshot 2026-07-22 230742.png
+|       |   |       Screenshot 2026-07-22 231950.png
+|       |   |       Screenshot 2026-07-22 232049.png
+|       |   |       Screenshot 2026-07-22 234500.png
+|       |   |       Screenshot 2026-07-22 234511.png
+|       |   |       Screenshot 2026-07-23 095539.png
+|       |   |       Screenshot 2026-07-23 101018.png
+|       |   |       Screenshot 2026-07-23 113001.png
+|       |   |       Screenshot 2026-07-23 152230.png
+|       |   |       Screenshot 2026-07-23 153808.png
+|       |   |       Screenshot 2026-07-23 154511.png
+|       |   |       Screenshot 2026-07-23 154632.png
+|       |   |       Screenshot 2026-07-23 154836.png
+|       |   |       Screenshot 2026-07-23 161500.png
+|       |   |       Screenshot 2026-07-23 161510.png
+|       |   |       Screenshot 2026-07-23 161539.png
+|       |   |       Screenshot 2026-07-23 161557.png
+|       |   |       Screenshot 2026-07-23 161608.png
+|       |   |       Screenshot 2026-07-23 161615.png
+|       |   |       Screenshot 2026-07-23 161623.png
+|       |   |       Screenshot 2026-07-23 161632.png
+|       |   |       Screenshot 2026-07-23 161856.png
+|       |   |       Screenshot 2026-07-23 171420.png
+|       |   |       Screenshot 2026-07-23 171429.png
+|       |   |       Screenshot 2026-07-23 171439.png
+|       |   |       Screenshot 2026-07-23 172802.png
+|       |   |       Screenshot 2026-07-23 173017.png
+|       |   |       Screenshot 2026-07-23 201156.png
+|       |   |       Screenshot 2026-07-23 201203.png
+|       |   |       Screenshot 2026-07-23 202322.png
+|       |   |       Screenshot 2026-07-23 202338.png
+|       |   |       Screenshot 2026-07-23 202359.png
+|       |   |       
+|       |   \---suricata
+|       |           01-suricata-version-and-features.png
+|       |           02-suricata-initial-interface-error.png
+|       |           03-ubuntu-interface-verification.png
+|       |           04-suricata-home-net-configuration.png
+|       |           05-suricata-af-packet-configuration.png
+|       |           06-suricata-config-validation.png
+|       |           07-suricata-service-active.png
+|       |           08-safe-web-attack-test-requests.png
+|       |           09-suricata-fast-log-alerts.png
+|       |           10-suricata-eve-json-alert-analysis.png
+|       |           11-local-rules-editor.png
+|       |           12-local-rules-final.png
+|       |           13-nginx-access-log-test-traffic.png
+|       |           
+|       \---scripts
+|           |   README.md
+|           |   
+|           +---monitoring
+|           |       alert-rules.yml
+|           |       docker-compose.yml
+|           |       prometheus.yml
+|           |       
+|           +---sample-log-generators
+|           |       generate-cpu-load.sh
+|           |       generate-web-attack-requests.ps1
+|           |       test-firewall-policy.ps1
+|           |       
+|           \---suricata-rules
+|                   local.rules
+|                   
+\---docs
+        repository-baseline-tree-windows.txt
+        repository-baseline-tree.txt
+        
