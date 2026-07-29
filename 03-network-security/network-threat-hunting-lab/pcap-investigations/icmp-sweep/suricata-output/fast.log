@@ -1,0 +1,1 @@
+07/27/2026-06:12:13.881734  [**] [1:1000004:1] LOCAL P2 ICMP host discovery sweep [**] [Classification: Detection of a Network Scan] [Priority: 3] {ICMP} 192.168.10.10:8 -> 192.168.20.10:0

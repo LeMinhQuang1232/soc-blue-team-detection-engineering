@@ -1,0 +1,29 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary detector output
+*.tmp
+*.bak
+/tmp/
+
+# Archives and virtual-machine artifacts
+*.zip
+*.7z
+*.rar
+*.ova
+*.vdi
+*.vmdk
+
+# Obsolete local capture excluded from the public project
+capture-old-one-port.pcap

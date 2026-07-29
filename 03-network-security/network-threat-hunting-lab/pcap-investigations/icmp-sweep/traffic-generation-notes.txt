@@ -1,0 +1,13 @@
+Scenario: ICMP Host Discovery
+Source: 192.168.10.10 (Windows USER)
+Primary target/network: 192.168.20.10 or controlled DMZ addresses
+Authorization: isolated VirtualBox lab owned and controlled by the project author
+
+Method:
+A controlled Nmap host-discovery command was run against the lab DMZ range. Only owned, isolated addresses were included.
+
+Safety constraints:
+- No public or third-party target was scanned.
+- No production credentials were used.
+- The activity was stopped after the evidence dataset was captured.
+- Exact command screenshots are retained in the scenario evidence folder where applicable.

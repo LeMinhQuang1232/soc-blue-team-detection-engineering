@@ -1,0 +1,30 @@
+<group name="network_reconnaissance,python_detector,">
+
+  <rule id="100200" level="0">
+    <decoded_as>json</decoded_as>
+    <field name="event_type">^network_reconnaissance$</field>
+    <description>Python network reconnaissance detector event.</description>
+  </rule>
+
+  <rule id="100201" level="7">
+    <if_sid>100200</if_sid>
+    <field name="risk_level">^Medium$</field>
+    <description>Medium network reconnaissance: $(classification) from $(source_ip), score $(risk_score).</description>
+    <group>network_reconnaissance,threat_hunting,</group>
+  </rule>
+
+  <rule id="100202" level="10">
+    <if_sid>100200</if_sid>
+    <field name="risk_level">^High$</field>
+    <description>High network reconnaissance: $(classification) from $(source_ip), score $(risk_score).</description>
+    <group>network_reconnaissance,threat_hunting,</group>
+  </rule>
+
+  <rule id="100203" level="12">
+    <if_sid>100200</if_sid>
+    <field name="risk_level">^Critical$</field>
+    <description>Critical network reconnaissance: $(classification) from $(source_ip), score $(risk_score).</description>
+    <group>network_reconnaissance,threat_hunting,</group>
+  </rule>
+
+</group>
