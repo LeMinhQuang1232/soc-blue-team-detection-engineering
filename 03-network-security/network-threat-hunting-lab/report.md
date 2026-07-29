@@ -1,4 +1,4 @@
-# Technical Report — Zeek-Suricata Network Threat Hunting and Reconnaissance Detection
+# Zeek-Suricata Network Threat Hunting and Reconnaissance Detection Report
 
 ## Executive Summary
 
