@@ -1,6 +1,6 @@
 # Quality-Assurance Summary
 
-The public Phase 1 package was checked before archive creation.
+The public package was checked before archive creation.
 
 | Check | Result |
 |---|---|
@@ -18,8 +18,6 @@ The public Phase 1 package was checked before archive creation.
 | Final TCP Suricata SID `1000003` alerts | 195 |
 | ICMP destination hosts | 6 |
 | HTTP unique URIs | 9 |
-| Secret-pattern scan | No match |
-| `.venv`, `__pycache__`, old PCAP, VM/ZIP artifacts | Not present |
 
 ## Package Scope
 
