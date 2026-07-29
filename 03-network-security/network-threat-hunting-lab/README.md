@@ -35,6 +35,25 @@ flowchart LR
 
 The final TCP SYN dataset is the strongest end-to-end validation. The same activity is visible in the packet capture, Wireshark, Zeek, Suricata, Python output, and Wazuh.
 
+## What I Built
+
+- A repeatable threat-hunting workflow for baseline traffic, ICMP sweeps, TCP SYN scans, service probing, and HTTP enumeration.
+- Offline packet analysis using `tcpdump`, Wireshark, Zeek, and Suricata.
+- Zeek JSON logs and reusable queries for connection, port, host, and HTTP analysis.
+- A Python reconnaissance detector that groups events by source IP and time window, calculates risk scores, and classifies suspicious behavior.
+- Wazuh rules and queries for centralized reconnaissance alert investigation.
+- Validation tests, evidence logs, and an incident report based on controlled lab traffic.
+
+## What I Learned
+
+- Normal network behavior must be understood before reconnaissance can be identified reliably.
+- A single packet rarely proves malicious activity; useful detections require aggregation across ports, hosts, connection states, and time windows.
+- PCAP, Zeek, Suricata, and Wazuh provide different levels of evidence and should be correlated.
+- Signature-based alerts detect known patterns, while behavioral scoring can identify broader reconnaissance activity.
+- Detection thresholds must be tuned to reduce false positives from legitimate scanning, monitoring, and troubleshooting.
+- A detection alert indicates activity that requires investigation, not automatic proof of compromise.
+
+
 ## Evidence Highlights
 
 [![Zeek service](screenshots/00-setup/P2-SETUP-05-zeek-service-running.png)](screenshots/00-setup/P2-SETUP-05-zeek-service-running.png)
