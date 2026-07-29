@@ -4,8 +4,8 @@ This category contains self-contained projects focused on firewall policy, segme
 
 | Project | Scope | Status |
 |---|---|---|
-| [Firewall, IDS, and Monitoring Lab](firewall-ids-monitoring-lab/) | pfSense segmentation, Suricata IDS, Prometheus, Grafana, incident analysis | Completed with documented lab limitations |
-| [Zeek-Suricata Network Threat Hunting and Reconnaissance Detection](network-threat-hunting-lab/) | PCAP collection, Wireshark, Zeek metadata, Suricata correlation, Python risk scoring, Wazuh integration | Phase 1 completed |
+| [Firewall, IDS, and Monitoring Lab](firewall-ids-monitoring-lab/) | pfSense segmentation, Suricata IDS, Prometheus, Grafana, incident analysis | Completed |
+| [Zeek-Suricata Network Threat Hunting and Reconnaissance Detection](network-threat-hunting-lab/) | PCAP collection, Wireshark, Zeek metadata, Suricata correlation, Python risk scoring, Wazuh integration | Completed |
 
 ## How the Projects Connect
 
