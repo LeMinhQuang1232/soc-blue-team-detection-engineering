@@ -131,7 +131,7 @@ The network-security project built three pfSense zones, enforced least-privilege
 
 ## Project 5 — Zeek-Suricata Network Threat Hunting
 
-Phase 1 extends the segmented network lab with five reproducible PCAP datasets, Wireshark packet validation, Zeek JSON metadata, Suricata reconnaissance signatures, a configurable Python detector, and Wazuh ingestion. The final TCP SYN scenario demonstrates one activity through all six evidence layers and includes threshold tuning and false-positive analysis.
+This project extends the segmented network lab with five reproducible PCAP datasets, Wireshark packet validation, Zeek JSON metadata, Suricata reconnaissance signatures, a configurable Python detector, and Wazuh ingestion. The final TCP SYN scenario demonstrates one activity through all six evidence layers and includes threshold tuning and false-positive analysis.
 
 **Project links:** [Project README](03-network-security/network-threat-hunting-lab/) · [Technical report](03-network-security/network-threat-hunting-lab/report.md) · [PCAP investigations](03-network-security/network-threat-hunting-lab/pcap-investigations/) · [Python detector](03-network-security/network-threat-hunting-lab/python-detector/) · [Wazuh integration](03-network-security/network-threat-hunting-lab/wazuh-integration/) · [Incident report](03-network-security/network-threat-hunting-lab/incident-reports/network-reconnaissance-report.md) · [Screenshots](03-network-security/network-threat-hunting-lab/screenshots/)
 
