@@ -12,30 +12,56 @@ The portfolio is organized by **security function**, while each project remains 
 
 ```mermaid
 flowchart LR
-    WIN["Windows Endpoint<br/>WIN-ENDPOINT / 192.168.10.10"]
-    WAZUH["Wazuh SIEM<br/>Ubuntu DMZ / 192.168.20.10"]
-    LC["LimaCharlie EDR"]
-    PFS["pfSense Firewall"]
-    USER["USER_NET<br/>192.168.10.0/24"]
-    DMZ["DMZ_NET<br/>192.168.20.0/24"]
-    ADMIN["SOC_ADMIN<br/>192.168.30.0/24"]
-    NGINX["Nginx Web Service"]
-    SURICATA["Suricata IDS"]
-    ZEEK["Zeek / PCAP Analysis"]
-    PY["Python Recon Detector"]
+    subgraph ENDPOINT["Windows Endpoint - 192.168.10.10"]
+        TESTS["Atomic Red Team / Native Commands / EICAR"]
+        WIN["Windows USER / SOC_ADMIN Test Roles"]
+        SYSMON["Sysmon and Windows Security"]
+        DEFENDER["Microsoft Defender"]
 
-    WIN -->|"Windows Security and Sysmon"| WAZUH
-    WIN -->|"Endpoint telemetry"| LC
-    WIN --> PFS
-    PFS --> USER
-    PFS --> DMZ
-    PFS --> ADMIN
+        TESTS --> WIN
+        WIN --> SYSMON
+        WIN --> DEFENDER
+    end
+
+    subgraph NETWORK["Segmented Lab Network"]
+        PFS["pfSense Firewall"]
+        USER["USER_NET<br/>192.168.10.0/24"]
+        DMZ["DMZ_NET<br/>192.168.20.0/24"]
+        ADMIN["SOC_ADMIN<br/>192.168.30.0/24"]
+
+        PFS --> USER
+        PFS --> DMZ
+        PFS --> ADMIN
+    end
+
+    subgraph SERVER["Ubuntu DMZ / Security Server - 192.168.20.10"]
+        WAZUH["Wazuh SIEM"]
+        NGINX["Nginx Web Service"]
+        SURICATA["Suricata IDS"]
+        ZEEK["Zeek / PCAP Analysis"]
+        PYTHON["Python Recon Detector"]
+        PROM["Prometheus and node_exporter"]
+        GRAFANA["Grafana Dashboards"]
+
+        NGINX -->|"Access logs"| WAZUH
+        SURICATA -->|"EVE JSON and alerts"| WAZUH
+        ZEEK --> PYTHON
+        PYTHON -->|"Structured detections"| WAZUH
+        PROM --> GRAFANA
+    end
+
+    LC["LimaCharlie EDR"]
+
+    WIN -->|"USER or SOC_ADMIN role"| PFS
+    USER -->|"HTTP allowed; admin ports blocked"| DMZ
+    ADMIN -->|"Authorized SSH and monitoring"| DMZ
     DMZ --> WAZUH
-    WAZUH --> NGINX
-    WAZUH --> SURICATA
-    WAZUH --> ZEEK
-    ZEEK --> PY
-    PY --> WAZUH
+    DMZ --> NGINX
+    DMZ --> SURICATA
+    DMZ --> ZEEK
+    SYSMON -->|"Endpoint telemetry"| WAZUH
+    DEFENDER -->|"Antivirus events"| WAZUH
+    WIN -->|"Endpoint telemetry and response"| LC
 ```
 
 ## Project Progress
@@ -108,29 +134,49 @@ soc-blue-team-detection-engineering/
 
 ## Project 1 — Wazuh Log Onboarding
 
-The first project established the telemetry foundation by collecting Windows authentication events, Sysmon endpoint telemetry, Ubuntu SSH events, and Nginx web requests.
+The first project established the telemetry foundation. A local Wazuh environment collected Windows authentication events, Sysmon endpoint telemetry, Ubuntu SSH events, and Nginx web requests generated through controlled tests.
+
+**Project links:** [Project README](01-siem/wazuh-log-onboarding/) · [Technical report](01-siem/wazuh-log-onboarding/report.md) · [Evidence log](01-siem/wazuh-log-onboarding/evidence-log.md) · [Validation tests](01-siem/wazuh-log-onboarding/validation-tests.md) · [Screenshots](01-siem/wazuh-log-onboarding/screenshots/)
 
 ## Project 2 — Wazuh Detection Engineering
 
-The second project converted collected telemetry into detection use cases for brute force, suspicious PowerShell, successful authentication after failures, and controlled web-attack patterns.
+The second project converted collected telemetry into detection use cases for SSH brute force, repeated Windows failed logons, successful authentication after failures, suspicious PowerShell, and web attack patterns. The work includes custom Wazuh rules, `wazuh-logtest` validation, detection documentation, and SOC-style incident reports.
+
+**Project links:** [Project README](01-siem/wazuh-detection-engineering/) · [Technical report](01-siem/wazuh-detection-engineering/report.md) · [Custom rules](01-siem/wazuh-detection-engineering/custom-rules.xml) · [Detection use cases](01-siem/wazuh-detection-engineering/detections/) · [Incident reports](01-siem/wazuh-detection-engineering/incident-reports/) · [Screenshots](01-siem/wazuh-detection-engineering/screenshots/)
 
 ## Project 3 — LimaCharlie EDR Detection and Response
 
-The endpoint-security project deployed a LimaCharlie sensor, investigated process context, correlated EDR telemetry with Wazuh, and tested network isolation and recovery.
+The endpoint-security project deployed a LimaCharlie sensor, investigated process and parent-process context, detected Windows reconnaissance commands, correlated EDR telemetry with Sysmon and Wazuh, and tested the operational effect of network isolation.
+
+**Project links:** [Project README](02-edr-endpoint-security/limacharlie-edr-lab/) · [Technical report](02-edr-endpoint-security/limacharlie-edr-lab/report.md) · [Detection rules](02-edr-endpoint-security/limacharlie-edr-lab/detection-rules.yml) · [Detection notes](02-edr-endpoint-security/limacharlie-edr-lab/detections/) · [Incident reports](02-edr-endpoint-security/limacharlie-edr-lab/incident-reports/) · [Screenshots](02-edr-endpoint-security/limacharlie-edr-lab/screenshots/)
 
 ## Project 4 — Firewall, IDS, and Infrastructure Monitoring
 
-The network-security project built three pfSense zones, enforced least-privilege access to a DMZ, validated Suricata IDS detections, and monitored the Ubuntu server with Prometheus and Grafana.
+The network-security project built three pfSense zones, enforced least-privilege access to a DMZ, detected controlled web-attack and scan traffic with Suricata, and monitored the Ubuntu server with Prometheus and Grafana. It also records real troubleshooting involving UFW, DNS and package access, Suricata interface naming, Docker networking, and timestamp normalization.
+
+**Project links:** [Project README](03-network-security/firewall-ids-monitoring-lab/) · [Full report](03-network-security/firewall-ids-monitoring-lab/report.md) · [Firewall](03-network-security/firewall-ids-monitoring-lab/firewall/) · [Suricata IDS](03-network-security/firewall-ids-monitoring-lab/ids/suricata/) · [Custom rules](03-network-security/firewall-ids-monitoring-lab/ids/custom-rules/) · [Monitoring](03-network-security/firewall-ids-monitoring-lab/monitoring/) · [Incident reports](03-network-security/firewall-ids-monitoring-lab/incident-reports/) · [Screenshots](03-network-security/firewall-ids-monitoring-lab/screenshots/)
 
 ## Project 5 — Zeek-Suricata Network Threat Hunting
 
-This project added reproducible PCAP datasets, Wireshark validation, Zeek JSON metadata, Suricata signatures, a configurable Python reconnaissance detector, and Wazuh ingestion.
+This project extends the segmented network lab with five reproducible PCAP datasets, Wireshark packet validation, Zeek JSON metadata, Suricata reconnaissance signatures, a configurable Python detector, and Wazuh ingestion. The final TCP SYN scenario demonstrates one activity through all six evidence layers and includes threshold tuning and false-positive analysis.
+
+**Project links:** [Project README](03-network-security/network-threat-hunting-lab/) · [Technical report](03-network-security/network-threat-hunting-lab/report.md) · [PCAP investigations](03-network-security/network-threat-hunting-lab/pcap-investigations/) · [Python detector](03-network-security/network-threat-hunting-lab/python-detector/) · [Wazuh integration](03-network-security/network-threat-hunting-lab/wazuh-integration/) · [Incident report](03-network-security/network-threat-hunting-lab/incident-reports/network-reconnaissance-report.md) · [Screenshots](03-network-security/network-threat-hunting-lab/screenshots/)
 
 ## Project 6 — Safe Adversary Emulation and ATT&CK-Aligned Detection Testing
 
 This phase created a controlled test catalog for encoded PowerShell, system and network discovery, account discovery, authentication failures, HTTP file transfer, network reconnaissance, and EICAR antivirus validation. The project compares expected telemetry with actual evidence across Sysmon, Windows Security, Defender, LimaCharlie, Wazuh, Nginx, Zeek, Suricata, Python, and pfSense. Every test includes safety constraints and cleanup validation.
 
 **Project links:** [Project README](04-adversary-emulation/safe-adversary-emulation-lab/) · [Technical report](04-adversary-emulation/safe-adversary-emulation-lab/report.md) · [Test catalog](04-adversary-emulation/safe-adversary-emulation-lab/test-catalog/test-index.md) · [Capability matrix](04-adversary-emulation/safe-adversary-emulation-lab/test-results/capability-matrix.md) · [Troubleshooting](04-adversary-emulation/safe-adversary-emulation-lab/troubleshooting/) · [Screenshots](04-adversary-emulation/safe-adversary-emulation-lab/screenshots/evidence-index.md)
+
+## Portfolio Highlights
+
+- Built an evidence-backed SOC portfolio spanning SIEM, EDR, firewall segmentation, IDS, threat hunting, safe adversary emulation, infrastructure monitoring, and incident reporting.
+- Collected and investigated Windows, Sysmon, Defender, Linux authentication, Nginx, EDR, firewall, Zeek, Suricata, and host-metrics data.
+- Wrote and validated detection logic for brute force, suspicious PowerShell, discovery activity, controlled file transfer, SQL injection, XSS, reconnaissance, and scan behavior.
+- Applied least-privilege network policy by allowing required application traffic and denying unauthorized administrative access.
+- Correlated security events across endpoint telemetry, SIEM alerts, firewall enforcement, IDS signatures, PCAP evidence, behavioral scoring, and infrastructure metrics.
+- Executed ATT&CK-aligned tests under documented rules of engagement, cleanup procedures, and recovery controls.
+- Documented failures, partial results, false positives, and recovery steps instead of presenting only successful screenshots.
 
 ## Integrated Lab Narrative
 
