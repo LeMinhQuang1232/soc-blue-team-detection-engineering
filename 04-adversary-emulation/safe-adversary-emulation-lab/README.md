@@ -1,4 +1,4 @@
-# Safe Adversary Emulation and ATT&CK-Aligned Detection Testing Lab
+# Safe Adversary Emulation and ATT&CK-Aligned Detection Testing
 
 ## Overview
 
