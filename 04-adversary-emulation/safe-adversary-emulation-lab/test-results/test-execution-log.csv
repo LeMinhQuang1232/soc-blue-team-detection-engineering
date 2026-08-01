@@ -1,0 +1,9 @@
+test_id,execution_window_local,source,target,expected,actual,status,cleanup
+P4-EXEC-01,2026-07-30 evening,WIN-ENDPOINT,Local endpoint,Process + EDR + Wazuh,Wazuh 92057 level 12; LC and process evidence,Validated,Complete
+P4-DISC-01,2026-07-30 evening,WIN-ENDPOINT,Local endpoint,Discovery process telemetry,System information evidence collected,Validated,Complete
+P4-DISC-02,2026-07-30 to 2026-07-31,WIN-ENDPOINT,Local endpoint,T1016 telemetry,Wazuh 100140 level 8; LC/process evidence,Validated,Complete
+P4-DISC-03,2026-07-30 evening,WIN-ENDPOINT,Local endpoint,Account-discovery telemetry,Wazuh 92032 mapped to T1087/T1059.003,Validated,Complete
+P4-AUTH-01,2026-07-31 15:12-15:34,WIN-ENDPOINT,127.0.0.1 IPC$,Failed logons in Security/Wazuh,Repeated failures captured; controlled success reviewed,Validated,User/session removed
+P4-FILE-01,2026-07-31 16:12 onward,WIN-ENDPOINT,192.168.20.10:80,Endpoint + web + Zeek + Wazuh,Sysmon 11; Wazuh 100150; Nginx/Zeek,Validated,Files removed
+P4-NET-01,2026-07-31 21:29-23:43,WIN-ENDPOINT,192.168.20.10,Firewall + Zeek + detector + Wazuh + IDS review,Zeek/pfSense/Python/Wazuh confirmed; Suricata attribution partial,Partial,Temporary outputs removed
+P4-EICAR-01,2026-07-31 23:44 and 23:57 retest,WIN-ENDPOINT,Local endpoint,Defender detect/remediate + Wazuh,1116/1117; Wazuh 62123/62124,Validated,Quarantined and absent
