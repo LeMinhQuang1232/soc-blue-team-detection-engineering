@@ -12,14 +12,16 @@ The portfolio is organized by **security function**, while each project remains 
 
 ```mermaid
 flowchart LR
-    subgraph ENDPOINT["Windows Endpoint - 192.168.10.10"]
+    subgraph ENDPOINT["Windows Endpoint (192.168.10.10)"]
         TESTS["Atomic Red Team / Native Commands / EICAR"]
         WIN["Windows USER / SOC_ADMIN Test Roles"]
-        SYSMON["Sysmon and Windows Security"]
+        SYSMON["Sysmon"]
+        SECURITY["Windows Security Logs"]
         DEFENDER["Microsoft Defender"]
 
         TESTS --> WIN
         WIN --> SYSMON
+        WIN --> SECURITY
         WIN --> DEFENDER
     end
 
@@ -34,17 +36,19 @@ flowchart LR
         PFS --> ADMIN
     end
 
-    subgraph SERVER["Ubuntu DMZ / Security Server - 192.168.20.10"]
+    subgraph SERVER["Ubuntu DMZ (192.168.20.10)"]
         WAZUH["Wazuh SIEM"]
         NGINX["Nginx Web Service"]
         SURICATA["Suricata IDS"]
-        ZEEK["Zeek / PCAP Analysis"]
+        PCAP["Captured PCAP"]
+        ZEEK["Zeek Offline Analysis"]
         PYTHON["Python Recon Detector"]
         PROM["Prometheus and node_exporter"]
         GRAFANA["Grafana Dashboards"]
 
         NGINX -->|"Access logs"| WAZUH
         SURICATA -->|"EVE JSON and alerts"| WAZUH
+        PCAP --> ZEEK
         ZEEK --> PYTHON
         PYTHON -->|"Structured detections"| WAZUH
         PROM --> GRAFANA
@@ -55,14 +59,19 @@ flowchart LR
     WIN -->|"USER or SOC_ADMIN role"| PFS
     USER -->|"HTTP allowed; admin ports blocked"| DMZ
     ADMIN -->|"Authorized SSH and monitoring"| DMZ
-    DMZ --> WAZUH
+
     DMZ --> NGINX
     DMZ --> SURICATA
-    DMZ --> ZEEK
+    DMZ --> PCAP
+
     SYSMON -->|"Endpoint telemetry"| WAZUH
+    SECURITY -->|"Authentication and audit events"| WAZUH
     DEFENDER -->|"Antivirus events"| WAZUH
     WIN -->|"Endpoint telemetry and response"| LC
+
 ```
+
+
 
 ## Project Progress
 
