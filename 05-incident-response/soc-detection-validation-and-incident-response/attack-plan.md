@@ -1,0 +1,34 @@
+# Controlled Incident Plan
+
+## Incident Identifier
+
+`P1-INC01-R1`
+
+## Objective
+
+Validate whether the existing SOC stack can observe, correlate, triage, contain, recover from, and retest a controlled multi-stage incident without using malware.
+
+## Attack Chain
+
+```mermaid
+flowchart TD
+    A[P1-AUTH-01: Five failed logons] --> B[P1-EXEC-01: Encoded PowerShell]
+    B --> C[P1-DISC-01: System and account discovery]
+    C --> D[P1-DISC-02: Network discovery]
+    D --> E[P1-NET-01: Bounded twelve-port probe]
+    E --> F[P1-HTTP-01: Benign file transfer]
+    F --> G[P1-HTTP-01: SQLi-like URI]
+    G --> H[Cross-layer triage]
+    H --> I[LimaCharlie isolation]
+    I --> J[Evidence preservation]
+    J --> K[Rejoin and recovery validation]
+    K --> L[Retest]
+```
+
+## Success Criteria
+
+* At least one endpoint, one SIEM, and one network or application source must support the investigation.
+* Containment must stop normal network connectivity without losing the EDR management channel.
+* Recovery must restore network access.
+* Gaps and partial results must be documented.
+* The same core sequence must be repeatable during retest.
