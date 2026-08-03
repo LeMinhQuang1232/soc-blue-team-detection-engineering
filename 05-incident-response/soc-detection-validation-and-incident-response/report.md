@@ -1,4 +1,4 @@
-# Technical Report — SOC Detection Validation and Incident Response
+# SOC Detection Validation and Incident Response Report
 
 ## 1. Executive Summary
 
