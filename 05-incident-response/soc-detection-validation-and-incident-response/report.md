@@ -19,6 +19,12 @@ The exercise achieved reliable endpoint, SIEM, EDR, and web-application visibili
 | Recovery | LimaCharlie rejoin and connectivity validation |
 | Safety | Authorized, isolated, non-destructive, no malware |
 
+## 2.1 Reused Test Catalog and Incident Test Set
+
+Project 6 remains the authoritative source for reusable test definitions. Phase 3 did not duplicate that catalog. Instead, it created an incident-specific test set in [`incident-tests/`](incident-tests/README.md) that records which tests were selected, how their IDs were mapped to `P1-INC01-R1`, what was executed, and how the initial and retest results were evaluated.
+
+The incident reused `P4-AUTH-01`, `P4-EXEC-01`, `P4-DISC-01`, `P4-DISC-02`, `P4-NET-01`, and `P4-FILE-01`. The SQLi-like request was an incident-specific extension that reused the existing Wazuh web-detection capability rather than a duplicated Project 6 test definition.
+
 ## 3. Environment Readiness
 
 Before execution, the lab verified:

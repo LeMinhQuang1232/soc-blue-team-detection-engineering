@@ -9,6 +9,7 @@ The controlled incident `P1-INC01-R1` was executed from `WIN-ENDPOINT` (`192.168
 ## What I Built
 
 * A repeatable incident-validation workflow covering baseline, controlled execution, triage, containment, recovery, gap analysis, tuning, and retest.
+* An incident-specific test set that maps reusable Project 6 tests to `P1-INC01-R1` execution steps.
 * A timestamped execution record for the initial run and the retest.
 * Cross-layer correlation across endpoint, application, network, SIEM, and EDR evidence.
 * Wazuh validation for encoded PowerShell, system discovery, network discovery, controlled file transfer, and SQLi-like activity.
@@ -74,6 +75,7 @@ The controlled incident `P1-INC01-R1` was executed from `WIN-ENDPOINT` (`192.168
 * [Rules of engagement](rules-of-engagement.md)
 * [Architecture and data flow](architecture.md)
 * [Attack plan](attack-plan.md)
+* [Incident test set](incident-tests/README.md)
 * [Initial and retest timeline](attack-timeline.md)
 * [Telemetry matrix](telemetry-matrix.md)
 * [Detection coverage and gaps](detection-coverage.md)
@@ -84,6 +86,7 @@ The controlled incident `P1-INC01-R1` was executed from `WIN-ENDPOINT` (`192.168
 * [Troubleshooting](troubleshooting/README.md)
 * [Screenshot index](screenshots/evidence-index.md)
 * [PCAP metadata](pcap/metadata.md)
+* [Structure update notes](structure-update-notes.md)
 
 ## Evidence Policy
 

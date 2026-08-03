@@ -1,5 +1,7 @@
 # Validation Tests
 
+Reusable source-test mapping is documented in [`incident-tests/P1-INC01-R1-test-mapping.md`](incident-tests/P1-INC01-R1-test-mapping.md).
+
 | ID | Validation | Expected result | Actual result | Status | Primary evidence |
 |---|---|---|---|---|---|
 | P1-V01 | Baseline service health | Core telemetry and security services active | Wazuh, Sysmon, Defender, LimaCharlie, Nginx, Suricata, and supporting services checked | Passed | Screenshots 001–014 |
