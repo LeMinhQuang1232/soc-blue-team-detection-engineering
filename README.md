@@ -102,8 +102,8 @@ flowchart LR
 | Endpoint Security | Investigated process context with LimaCharlie, Sysmon, Wazuh and tested isolation/recovery |
 | Network Security | Applied USER, DMZ and SOC_ADMIN segmentation with pfSense and least-privilege rules |
 | Threat Hunting | Used PCAP, Wireshark, Zeek, Suricata and Python behavioral scoring for network investigation |
-| Validation | Used ATT&CK-aligned safe tests to compare expected telemetry, observed evidence and detection coverage |
-| Incident Response | Correlated endpoint, application, network, SIEM, EDR evidence before containment, recovery, tuning and retest |
+| Detection Validation | Compared expected vs observed telemetry, identified detection gaps, tuned detections and retested coverage |
+| Incident Response | Correlated endpoint, application, network, SIEM and EDR evidence before containment, recovery and retest |
 | Troubleshooting | Documented issues involving connectivity, event channels, packet capture, parsing, timestamps and false positives |
 
 ## Repository Structure
@@ -129,14 +129,14 @@ soc-blue-team-detection-engineering/
 
 | Skill area | Practical evidence |
 |---|---|
-| SIEM & Log Onboarding | Wazuh with Windows Security, Sysmon, Defender, Linux, Nginx and JSON sources |
-| Detection Engineering | Custom Wazuh rules, `wazuh-logtest`, thresholds, correlation, ATT&CK mapping, tuning |
-| Endpoint Security | LimaCharlie process context, EDR telemetry, Sysmon/Wazuh correlation, isolation |
-| Network Security | pfSense segmentation, firewall policy, Suricata IDS, PCAP and Zeek analysis |
-| Threat Hunting | Wireshark investigation, Zeek metadata, Python time-window aggregation and risk scoring |
-| Adversary Emulation | Controlled ATT&CK-aligned tests with expected/observed telemetry comparison |
-| Incident Response | Triage, cross-layer correlation, containment, recovery, gap analysis, retest |
-| Troubleshooting | Service health, connectivity, event-channel, packet-capture, parsing, and attribution analysis |
+| SIEM & Log Onboarding | Wazuh collection and analysis across Windows, Linux, Nginx, Defender and Sysmon telemetry |
+| Detection Engineering | Rule development, `wazuh-logtest`, threshold/correlation logic, ATT&CK mapping and tuning |
+| Endpoint Security | EDR process context, Sysmon/Wazuh correlation, endpoint investigation and isolation |
+| Network Security | pfSense segmentation, least-privilege firewall policy, Suricata IDS, PCAP and Zeek analysis |
+| Threat Hunting | Packet investigation, network metadata analysis, time-window aggregation and behavioral scoring |
+| Adversary Emulation | Controlled ATT&CK-aligned testing with expected-vs-observed telemetry validation |
+| Incident Response | Triage, cross-layer correlation, containment, recovery, gap analysis and retest |
+| Troubleshooting | Layered service, connectivity, event-channel, packet-capture, parsing and attribution analysis |
 
 ## Project 1 — Wazuh Log Onboarding
 
@@ -185,7 +185,7 @@ The final phase reuses the SOC stack in an integrated incident covering **authen
 1. Collect endpoint, operating-system, application, authentication and network telemetry.
 2. Build and validate detections using controlled activity.
 3. Investigate and correlate endpoint, SIEM, EDR, firewall, IDS, PCAP and network metadata.
-4. Compare expected versus observed telemetry and identify gaps.
+4. Compare expected vs observed telemetry and identify detection gaps.
 5. Contain and recover the affected endpoint where required.
 6. Tune detections and retest the workflow.
 
